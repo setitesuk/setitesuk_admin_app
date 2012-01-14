@@ -1,0 +1,29 @@
+person
+id_person, forename, surname, initials, username
+
+team
+id_team, teamname
+
+admingroup
+id_admingroup, groupname
+
+holiday_allowance
+id_holiday_allowance, year, standard_allowance
+
+person_allowance
+id_person_allowance, year, pro_rata_allowance, carried_forward, total_allowance, remaining
+
+person_team
+id_person_team, id_person, id_team
+
+person_admingroup
+id_person_admingroup, id_person, id_admingroup
+
+responsibility_for
+id_responsibility_for, id_manager (id_person), id_person, push_to_further_manager
+
+holiday
+id_holiday, id_person, date_start, date_end, am, pm, approved, request_deletion, deletion_approved
+
+expense_claim
+id_expense_claim, id_person, date, short_description, long_description, invoice_submitted, manager_ratified, approved, paid
