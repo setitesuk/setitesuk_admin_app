@@ -1,0 +1,9 @@
+
+DROP TABLE IF EXISTS holiday;
+CREATE TABLE holiday (
+  id_person integer,
+  id_holiday integer primary key autoincrement
+);
+
+CREATE INDEX holiday_id_person on holiday (id_person);
+ 

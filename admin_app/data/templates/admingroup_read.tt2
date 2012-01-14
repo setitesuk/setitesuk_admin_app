@@ -1,0 +1,15 @@
+
+[<a href="[% model.id_admingroup %];edit">Edit</a>]
+<h2>admingroup </h2>
+<table>
+ <tr><th>groupname</th><td>[% model.groupname %]</td></tr>
+
+</table>
+
+[% PROCESS person_admingroup_list.tt2 %]
+
+
+
+ [<a href="[% SCRIPT_NAME %]/person_admingroup/;add?id_admingroup=[% model.id_admingroup %]">Add person_admingroup</a>]
+
+ 

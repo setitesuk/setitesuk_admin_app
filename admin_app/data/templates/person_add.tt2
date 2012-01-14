@@ -1,0 +1,8 @@
+
+<h2>person </h2>
+<form method="post" action="[% SCRIPT_NAME %]/person/">
+ <ul>
+ </ul>
+ <input type="submit" value="Add" />
+</form>
+ 

@@ -1,0 +1,7 @@
+
+<h2>admingroup </h2>
+admingroup saved ok. Click <a href="[% SCRIPT_NAME %]/admingroup/[% model.id_admingroup %]">here</a> to continue.
+<script type="text/javascript">
+ document.location.href="[% SCRIPT_NAME %]/admingroup/[% model.id_admingroup %]";
+</script>
+ 

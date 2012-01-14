@@ -1,0 +1,16 @@
+
+<h2>expense_claims </h2>
+<table id="expense_claim_list">
+ <caption>expense_claim list</caption>
+ <thead><tr></tr></thead>
+ <tbody>
+[% FOREACH expense_claim = model.expense_claims %]
+<tr>
+ 
+ <td>[<a href="[% SCRIPT_NAME %]/expense_claim/[% expense_claim.id_expense_claim %]">details</a>]</td>
+</tr>
+[% END %]
+ </tbody>
+</table>
+
+ 

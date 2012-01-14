@@ -1,0 +1,13 @@
+
+[<a href="[% model.id_responsibility_for %];edit">Edit</a>]
+<h2>responsibility_for </h2>
+<table>
+ <tr>
+  <th>person</th>
+  <td>[<a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">details</a>]</td>
+ </tr>
+</table>
+
+
+
+ 

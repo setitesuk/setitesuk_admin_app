@@ -1,0 +1,9 @@
+
+<h2>holiday </h2>
+<form method="post" action="[% model.id_holiday %]">
+ <ul>
+
+ </ul>
+ <input type="submit" value="Update" />
+</form>
+ 

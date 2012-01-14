@@ -1,0 +1,16 @@
+
+<h2>person_teams </h2>
+<table id="person_team_list">
+ <caption>person_team list</caption>
+ <thead><tr></tr></thead>
+ <tbody>
+[% FOREACH person_team = model.person_teams %]
+<tr>
+ 
+ <td>[<a href="[% SCRIPT_NAME %]/person_team/[% person_team.id_person_team %]">details</a>]</td>
+</tr>
+[% END %]
+ </tbody>
+</table>
+
+ 

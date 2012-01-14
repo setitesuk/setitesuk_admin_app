@@ -1,0 +1,16 @@
+
+[<a href="[% model.id_person_team %];edit">Edit</a>]
+<h2>person_team </h2>
+<table>
+ <tr>
+  <th>person</th>
+  <td>[<a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">details</a>]</td>
+ </tr> <tr>
+  <th>team</th>
+  <td>[<a href="[% SCRIPT_NAME %]/team/[% model.id_team %]">details</a>]</td>
+ </tr>
+</table>
+
+
+
+ 

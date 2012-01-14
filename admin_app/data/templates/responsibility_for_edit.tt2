@@ -1,0 +1,9 @@
+
+<h2>responsibility_for </h2>
+<form method="post" action="[% model.id_responsibility_for %]">
+ <ul>
+
+ </ul>
+ <input type="submit" value="Update" />
+</form>
+ 

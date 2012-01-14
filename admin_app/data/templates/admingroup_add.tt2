@@ -1,0 +1,11 @@
+
+<h2>admingroup </h2>
+<form method="post" action="[% SCRIPT_NAME %]/admingroup/">
+ <ul>  <li>
+   <label for="groupname">groupname</label>
+   <input type="text" id="groupname" name="groupname" value="[% model.groupname %]" />
+  </li>
+ </ul>
+ <input type="submit" value="Add" />
+</form>
+ 

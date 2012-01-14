@@ -1,0 +1,13 @@
+
+[<a href="[% model.id_expense_claim %];edit">Edit</a>]
+<h2>expense_claim </h2>
+<table>
+ <tr>
+  <th>person</th>
+  <td>[<a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">details</a>]</td>
+ </tr>
+</table>
+
+
+
+ 

@@ -1,0 +1,9 @@
+
+<h2>person </h2>
+<form method="post" action="[% model.id_person %]">
+ <ul>
+
+ </ul>
+ <input type="submit" value="Update" />
+</form>
+ 

@@ -1,0 +1,16 @@
+
+<h2>admingroups </h2>
+<table id="admingroup_list">
+ <caption>admingroup list</caption>
+ <thead><tr><th>groupname</th></tr></thead>
+ <tbody>
+[% FOREACH admingroup = model.admingroups %]
+<tr>
+ <td>[% admingroup.groupname %]</td>
+ <td>[<a href="[% SCRIPT_NAME %]/admingroup/[% admingroup.id_admingroup %]">details</a>]</td>
+</tr>
+[% END %]
+ </tbody>
+</table>
+
+ 

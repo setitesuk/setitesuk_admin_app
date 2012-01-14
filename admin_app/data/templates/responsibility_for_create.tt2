@@ -1,0 +1,7 @@
+
+<h2>responsibility_for </h2>
+responsibility_for saved ok. Click <a href="[% SCRIPT_NAME %]/responsibility_for/[% model.id_responsibility_for %]">here</a> to continue.
+<script type="text/javascript">
+ document.location.href="[% SCRIPT_NAME %]/responsibility_for/[% model.id_responsibility_for %]";
+</script>
+ 

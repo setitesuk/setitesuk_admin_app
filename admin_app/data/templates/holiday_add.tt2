@@ -1,0 +1,13 @@
+
+<h2>holiday </h2>
+<form method="post" action="[% SCRIPT_NAME %]/holiday/">
+ <ul>
+  <li>
+   <label for="id_person">id_person</label>
+   <input type="hidden" id="[% model.id_person %]" name="id_person" value="[% model.id_person %]" />[% model.id_person %]
+  </li>
+
+ </ul>
+ <input type="submit" value="Add" />
+</form>
+ 

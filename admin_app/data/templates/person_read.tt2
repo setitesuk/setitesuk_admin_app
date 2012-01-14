@@ -1,0 +1,34 @@
+
+[<a href="[% model.id_person %];edit">Edit</a>]
+<h2>person </h2>
+<table>
+
+</table>
+
+[% PROCESS person_allowance_list.tt2 %]
+
+[% PROCESS person_team_list.tt2 %]
+
+[% PROCESS person_admingroup_list.tt2 %]
+
+[% PROCESS responsibility_for_list.tt2 %]
+
+[% PROCESS holiday_list.tt2 %]
+
+[% PROCESS expense_claim_list.tt2 %]
+
+
+
+ [<a href="[% SCRIPT_NAME %]/person_allowance/;add?id_person=[% model.id_person %]">Add person_allowance</a>]
+
+ [<a href="[% SCRIPT_NAME %]/person_team/;add?id_person=[% model.id_person %]">Add person_team</a>]
+
+ [<a href="[% SCRIPT_NAME %]/person_admingroup/;add?id_person=[% model.id_person %]">Add person_admingroup</a>]
+
+ [<a href="[% SCRIPT_NAME %]/responsibility_for/;add?id_person=[% model.id_person %]">Add responsibility_for</a>]
+
+ [<a href="[% SCRIPT_NAME %]/holiday/;add?id_person=[% model.id_person %]">Add holiday</a>]
+
+ [<a href="[% SCRIPT_NAME %]/expense_claim/;add?id_person=[% model.id_person %]">Add expense_claim</a>]
+
+ 

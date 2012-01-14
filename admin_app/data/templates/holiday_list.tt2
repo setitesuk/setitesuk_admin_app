@@ -1,0 +1,16 @@
+
+<h2>holidays </h2>
+<table id="holiday_list">
+ <caption>holiday list</caption>
+ <thead><tr></tr></thead>
+ <tbody>
+[% FOREACH holiday = model.holidays %]
+<tr>
+ 
+ <td>[<a href="[% SCRIPT_NAME %]/holiday/[% holiday.id_holiday %]">details</a>]</td>
+</tr>
+[% END %]
+ </tbody>
+</table>
+
+ 

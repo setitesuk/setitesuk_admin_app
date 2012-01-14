@@ -1,0 +1,9 @@
+
+<h2>expense_claim </h2>
+<form method="post" action="[% model.id_expense_claim %]">
+ <ul>
+
+ </ul>
+ <input type="submit" value="Update" />
+</form>
+ 

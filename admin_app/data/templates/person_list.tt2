@@ -1,0 +1,16 @@
+
+<h2>people </h2>
+<table id="person_list">
+ <caption>person list</caption>
+ <thead><tr></tr></thead>
+ <tbody>
+[% FOREACH person = model.people %]
+<tr>
+ 
+ <td>[<a href="[% SCRIPT_NAME %]/person/[% person.id_person %]">details</a>]</td>
+</tr>
+[% END %]
+ </tbody>
+</table>
+
+ 

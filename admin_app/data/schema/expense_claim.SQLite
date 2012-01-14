@@ -1,0 +1,9 @@
+
+DROP TABLE IF EXISTS expense_claim;
+CREATE TABLE expense_claim (
+  id_person integer,
+  id_expense_claim integer primary key autoincrement
+);
+
+CREATE INDEX expense_claim_id_person on expense_claim (id_person);
+ 

@@ -1,0 +1,8 @@
+
+DROP TABLE IF EXISTS team;
+CREATE TABLE team (
+  teamname text,
+  id_team integer primary key autoincrement
+);
+
+ 

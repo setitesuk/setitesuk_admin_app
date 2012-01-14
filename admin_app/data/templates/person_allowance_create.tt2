@@ -1,0 +1,7 @@
+
+<h2>person_allowance </h2>
+person_allowance saved ok. Click <a href="[% SCRIPT_NAME %]/person_allowance/[% model.id_person_allowance %]">here</a> to continue.
+<script type="text/javascript">
+ document.location.href="[% SCRIPT_NAME %]/person_allowance/[% model.id_person_allowance %]";
+</script>
+ 

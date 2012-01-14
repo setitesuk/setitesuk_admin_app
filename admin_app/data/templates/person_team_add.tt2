@@ -1,0 +1,18 @@
+
+<h2>person_team </h2>
+<form method="post" action="[% SCRIPT_NAME %]/person_team/">
+ <ul>
+  <li>
+   <label for="id_person">id_person</label>
+   <input type="hidden" id="[% model.id_person %]" name="id_person" value="[% model.id_person %]" />[% model.id_person %]
+  </li>
+
+  <li>
+   <label for="id_team">id_team</label>
+   <input type="hidden" id="[% model.id_team %]" name="id_team" value="[% model.id_team %]" />[% model.id_team %]
+  </li>
+
+ </ul>
+ <input type="submit" value="Add" />
+</form>
+ 

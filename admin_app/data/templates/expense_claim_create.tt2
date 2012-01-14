@@ -1,0 +1,7 @@
+
+<h2>expense_claim </h2>
+expense_claim saved ok. Click <a href="[% SCRIPT_NAME %]/expense_claim/[% model.id_expense_claim %]">here</a> to continue.
+<script type="text/javascript">
+ document.location.href="[% SCRIPT_NAME %]/expense_claim/[% model.id_expense_claim %]";
+</script>
+ 

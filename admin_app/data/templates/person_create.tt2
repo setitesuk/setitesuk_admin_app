@@ -1,0 +1,7 @@
+
+<h2>person </h2>
+person saved ok. Click <a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">here</a> to continue.
+<script type="text/javascript">
+ document.location.href="[% SCRIPT_NAME %]/person/[% model.id_person %]";
+</script>
+ 

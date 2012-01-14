@@ -1,0 +1,16 @@
+
+<h2>person_admingroups </h2>
+<table id="person_admingroup_list">
+ <caption>person_admingroup list</caption>
+ <thead><tr></tr></thead>
+ <tbody>
+[% FOREACH person_admingroup = model.person_admingroups %]
+<tr>
+ 
+ <td>[<a href="[% SCRIPT_NAME %]/person_admingroup/[% person_admingroup.id_person_admingroup %]">details</a>]</td>
+</tr>
+[% END %]
+ </tbody>
+</table>
+
+ 
