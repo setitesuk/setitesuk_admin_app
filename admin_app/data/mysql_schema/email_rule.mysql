@@ -1,0 +1,9 @@
+
+DROP TABLE IF EXISTS email_rule;
+CREATE TABLE `email_rule` (
+  `id_email_rule` bigint(20) unsigned NOT NULL auto_increment,
+  `rule` char(128) NOT NULL,
+
+  PRIMARY KEY  (`id_email_rule`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 

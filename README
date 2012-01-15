@@ -31,6 +31,9 @@ id_expense_claim, id_person, date, short_description, long_description, invoice_
 clearpress \
 -new admin_app \
 'person(forename) person(surname) person(initials) person(username) \
+company(name) company(email_domain) company->email_rule \
+email_rule(rule) \
+team_company() team_company->team team_company->company \
 team(teamname) \
 admingroup(groupname) \
 holiday_allowance(year) holiday_allowance(standard_allowance) \
@@ -40,22 +43,25 @@ person_admingroup() person_admingroup->person person_admingroup->admingroup \
 responsibility_for(id_manager) responsibility_for(push_to_further_manager) responsibility_for->person \
 holiday(date_start) holiday(date_end) holiday(am) holiday(pm) holiday(approved) holiday(request_deletion) holiday(deletion_approved) holiday->person \
 expense_claim(date) expense_claim(short_description) expense_claim(long_description) expense_claim(invoice_submitted) expense_claim(manager_approved) expense_claim(hr_approved) expense_claim(paid) expense_claim->person ' \
--driver SQLite
+-driver mysql
 
 You now need to configure your database.
 1. Check and/or modify admin_app/data/config.ini
 2. If necessary create a database, something like this:
   mysqladmin -uroot create admin_app
-3. cat admin_app/data/mysql_schema/holiday_allowance.mysql \
-       admin_app/data/mysql_schema/admingroup.mysql \
-       admin_app/data/mysql_schema/person.mysql \
-       admin_app/data/mysql_schema/team.mysql \
-       admin_app/data/mysql_schema/holiday.mysql \
-       admin_app/data/mysql_schema/expense_claim.mysql \
-       admin_app/data/mysql_schema/responsibility_for.mysql \
-       admin_app/data/mysql_schema/person_allowance.mysql \
-       admin_app/data/mysql_schema/person_team.mysql \
-       admin_app/data/mysql_schema/person_admingroup.mysql \
+3. cat admin_app/data/schema/email_rule.mysql \
+       admin_app/data/schema/holiday_allowance.mysql \
+       admin_app/data/schema/admingroup.mysql \
+       admin_app/data/schema/person.mysql \
+       admin_app/data/schema/team.mysql \
+       admin_app/data/schema/holiday.mysql \
+       admin_app/data/schema/expense_claim.mysql \
+       admin_app/data/schema/responsibility_for.mysql \
+       admin_app/data/schema/person_allowance.mysql \
+       admin_app/data/schema/company.mysql \
+       admin_app/data/schema/person_team.mysql \
+       admin_app/data/schema/person_admingroup.mysql \
+       admin_app/data/schema/team_company.mysql \
        | mysql -uroot admin_app
 
 1. Check and/or modify admin_app/data/config.ini

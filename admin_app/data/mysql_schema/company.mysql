@@ -1,0 +1,14 @@
+
+DROP TABLE IF EXISTS company;
+CREATE TABLE `company` (
+  `id_company` bigint(20) unsigned NOT NULL auto_increment,
+  `email_domain` char(128) NOT NULL,
+  `name` char(128) NOT NULL,
+
+  `id_email_rule` bigint(20) unsigned NOT NULL,
+  KEY `company_email_rule` (`id_email_rule`),
+  CONSTRAINT `company_email_rule` FOREIGN KEY (`id_email_rule`) REFERENCES `email_rule` (`id_email_rule`),
+
+  PRIMARY KEY  (`id_company`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 

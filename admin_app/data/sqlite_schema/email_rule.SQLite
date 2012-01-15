@@ -1,0 +1,6 @@
+
+DROP TABLE IF EXISTS email_rule;
+CREATE TABLE email_rule (
+  id_email_rule integer primary key autoincrement,
+  rule text
+);

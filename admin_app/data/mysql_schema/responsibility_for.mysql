@@ -4,7 +4,7 @@ CREATE TABLE `responsibility_for` (
   `id_responsibility_for` bigint(20) unsigned NOT NULL auto_increment,
   `id_manager` bigint(20),
   `id_person` bigint(20) unsigned NOT NULL,
-  `push_to_further_manager` char(128) NOT NULL,
+  `push_to_further_manager` tinyint(1) NOT NULL,
   KEY `responsibility_for_person` (`id_person`),
   CONSTRAINT `responsibility_for_person` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`),
   CONSTRAINT `responsibility_for_manager` FOREIGN KEY (`id_manager`) REFERENCES `person` (`id_person`),

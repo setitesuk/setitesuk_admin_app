@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS person_allowance;
 CREATE TABLE `person_allowance` (
   `id_person_allowance` bigint(20) unsigned NOT NULL auto_increment,
   `id_person` bigint(20) unsigned NOT NULL,
-  `year` char(128) NOT NULL,
+  `year` int(4) NOT NULL,
   `pro_rata_allowance` char(128) NOT NULL,
   `carried_forward` char(128) NOT NULL,
   `total_allowance` char(128) NOT NULL,

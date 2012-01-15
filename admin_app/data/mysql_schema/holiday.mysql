@@ -3,10 +3,10 @@ DROP TABLE IF EXISTS holiday;
 CREATE TABLE `holiday` (
   `id_holiday` bigint(20) unsigned NOT NULL auto_increment,
   `id_person` bigint(20) unsigned NOT NULL,
+  `date_start` timestamp NOT NULL,
   `date_end` timestamp NOT NULL,
-  `date_start` char(128) NOT NULL,
-  `am` char(128) NOT NULL,
-  `pm` char(128) NOT NULL,
+  `am` tinyint(1) NOT NULL,
+  `pm` tinyint(1) NOT NULL,
   `approved` timestamp NOT NULL,
   `request_deletion` timestamp NOT NULL,
   `deletion_approved` timestamp NOT NULL,
