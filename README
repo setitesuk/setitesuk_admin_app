@@ -33,26 +33,11 @@ clearpress \
 'person(forename,surname,initials, username) \
 team(teamname) \
 admingroup(groupname) \
-holiday_allowance(year, standard_allowance) \
-person_allowance(year, pro_rata_allowance, carried_forward, total_allowance, remaining) person_allowance->person \
+holiday_allowance(year) holiday_allowance(standard_allowance) \
+person_allowance(year) person_allowance(pro_rata_allowance) person_allowance(carried_forward) person_allowance(total_allowance) person_allowance(remaining) person_allowance->person \
 person_team() person_team->person person_team->team \
 person_admingroup() person_admingroup->person person_admingroup->admingroup \
-responsibility_for(id_manager, push_to_further_manager) responsibility_for->person \
-holiday(date_start, date_end, am, pm, approved, request_deletion, deletion_approved) holiday->person \
-expense_claim(date, short_description, long_description, invoice_submitted, manager_approved, hr_approved, paid) expense_claim->person ' \
--driver SQLite
-
-clearpress \
--new admin_app \
-'person(forename,surname,initials, username) \
-team(teamname) \
-admingroup(groupname) \
-holiday_allowance(year standard_allowance) \
-person_allowance(year pro_rata_allowance carried_forward total_allowance remaining) person_allowance->person \
-person_team() person_team->person person_team->team \
-person_admingroup() person_admingroup->person person_admingroup->admingroup \
-responsibility_for(id_manager push_to_further_manager) responsibility_for->person \
-holiday(date_start date_end am pm approved request_deletion deletion_approved) holiday->person \
+responsibility_for(id_manager) responsibility_for(push_to_further_manager) responsibility_for->person \
+holiday(date_start) holiday(date_end) holiday(am) holiday(pm) holiday(approved) holiday(request_deletion) holiday(deletion_approved) holiday->person \
 expense_claim(date short_description long_description invoice_submitted manager_approved hr_approved paid) expense_claim->person ' \
 -driver SQLite
-

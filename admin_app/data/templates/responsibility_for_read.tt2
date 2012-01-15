@@ -2,6 +2,8 @@
 [<a href="[% model.id_responsibility_for %];edit">Edit</a>]
 <h2>responsibility_for </h2>
 <table>
+ <tr><th>id_manager</th><td>[% model.id_manager %]</td></tr>
+ <tr><th>push_to_further_manager</th><td>[% model.push_to_further_manager %]</td></tr>
  <tr>
   <th>person</th>
   <td>[<a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">details</a>]</td>

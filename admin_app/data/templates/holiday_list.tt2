@@ -2,11 +2,11 @@
 <h2>holidays </h2>
 <table id="holiday_list">
  <caption>holiday list</caption>
- <thead><tr></tr></thead>
+ <thead><tr><th>am</th><th>approved</th><th>date_end</th><th>date_start</th><th>deletion_approved</th><th>pm</th><th>request_deletion</th></tr></thead>
  <tbody>
 [% FOREACH holiday = model.holidays %]
 <tr>
- 
+ <td>[% holiday.am %]</td><td>[% holiday.approved %]</td><td>[% holiday.date_end %]</td><td>[% holiday.date_start %]</td><td>[% holiday.deletion_approved %]</td><td>[% holiday.pm %]</td><td>[% holiday.request_deletion %]</td>
  <td>[<a href="[% SCRIPT_NAME %]/holiday/[% holiday.id_holiday %]">details</a>]</td>
 </tr>
 [% END %]

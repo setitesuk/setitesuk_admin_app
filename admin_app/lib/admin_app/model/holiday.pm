@@ -12,7 +12,7 @@ __PACKAGE__->has_all();
 sub fields {
   return qw(id_holiday
 	    id_person 
-	    );
+	    am approved date_end date_start deletion_approved pm request_deletion );
 }
 
 1;

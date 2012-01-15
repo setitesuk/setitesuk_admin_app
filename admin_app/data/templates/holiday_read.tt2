@@ -2,6 +2,13 @@
 [<a href="[% model.id_holiday %];edit">Edit</a>]
 <h2>holiday </h2>
 <table>
+ <tr><th>am</th><td>[% model.am %]</td></tr>
+ <tr><th>approved</th><td>[% model.approved %]</td></tr>
+ <tr><th>date_end</th><td>[% model.date_end %]</td></tr>
+ <tr><th>date_start</th><td>[% model.date_start %]</td></tr>
+ <tr><th>deletion_approved</th><td>[% model.deletion_approved %]</td></tr>
+ <tr><th>pm</th><td>[% model.pm %]</td></tr>
+ <tr><th>request_deletion</th><td>[% model.request_deletion %]</td></tr>
  <tr>
   <th>person</th>
   <td>[<a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">details</a>]</td>

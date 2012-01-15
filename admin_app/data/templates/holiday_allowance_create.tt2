@@ -1,0 +1,7 @@
+
+<h2>holiday_allowance </h2>
+holiday_allowance saved ok. Click <a href="[% SCRIPT_NAME %]/holiday_allowance/[% model.id_holiday_allowance %]">here</a> to continue.
+<script type="text/javascript">
+ document.location.href="[% SCRIPT_NAME %]/holiday_allowance/[% model.id_holiday_allowance %]";
+</script>
+ 

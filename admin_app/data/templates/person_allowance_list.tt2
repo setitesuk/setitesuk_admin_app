@@ -2,11 +2,11 @@
 <h2>person_allowances </h2>
 <table id="person_allowance_list">
  <caption>person_allowance list</caption>
- <thead><tr></tr></thead>
+ <thead><tr><th>carried_forward</th><th>pro_rata_allowance</th><th>remaining</th><th>total_allowance</th><th>year</th></tr></thead>
  <tbody>
 [% FOREACH person_allowance = model.person_allowances %]
 <tr>
- 
+ <td>[% person_allowance.carried_forward %]</td><td>[% person_allowance.pro_rata_allowance %]</td><td>[% person_allowance.remaining %]</td><td>[% person_allowance.total_allowance %]</td><td>[% person_allowance.year %]</td>
  <td>[<a href="[% SCRIPT_NAME %]/person_allowance/[% person_allowance.id_person_allowance %]">details</a>]</td>
 </tr>
 [% END %]

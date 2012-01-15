@@ -6,7 +6,13 @@
    <label for="id_person">id_person</label>
    <input type="hidden" id="[% model.id_person %]" name="id_person" value="[% model.id_person %]" />[% model.id_person %]
   </li>
-
+  <li>
+   <label for="id_manager">id_manager</label>
+   <input type="text" id="id_manager" name="id_manager" value="[% model.id_manager %]" />
+  </li>  <li>
+   <label for="push_to_further_manager">push_to_further_manager</label>
+   <input type="text" id="push_to_further_manager" name="push_to_further_manager" value="[% model.push_to_further_manager %]" />
+  </li>
  </ul>
  <input type="submit" value="Add" />
 </form>

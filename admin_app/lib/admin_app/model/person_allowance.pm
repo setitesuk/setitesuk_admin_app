@@ -12,7 +12,7 @@ __PACKAGE__->has_all();
 sub fields {
   return qw(id_person_allowance
 	    id_person 
-	    );
+	    carried_forward pro_rata_allowance remaining total_allowance year );
 }
 
 1;

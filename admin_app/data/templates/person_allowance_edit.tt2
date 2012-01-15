@@ -2,7 +2,22 @@
 <h2>person_allowance </h2>
 <form method="post" action="[% model.id_person_allowance %]">
  <ul>
-
+  <li>
+   <label for="carried_forward">carried_forward</label>
+   <input type="text" id="carried_forward" name="carried_forward" value="[% model.carried_forward %]" />
+  </li>  <li>
+   <label for="pro_rata_allowance">pro_rata_allowance</label>
+   <input type="text" id="pro_rata_allowance" name="pro_rata_allowance" value="[% model.pro_rata_allowance %]" />
+  </li>  <li>
+   <label for="remaining">remaining</label>
+   <input type="text" id="remaining" name="remaining" value="[% model.remaining %]" />
+  </li>  <li>
+   <label for="total_allowance">total_allowance</label>
+   <input type="text" id="total_allowance" name="total_allowance" value="[% model.total_allowance %]" />
+  </li>  <li>
+   <label for="year">year</label>
+   <input type="text" id="year" name="year" value="[% model.year %]" />
+  </li>
  </ul>
  <input type="submit" value="Update" />
 </form>

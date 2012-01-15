@@ -2,6 +2,11 @@
 [<a href="[% model.id_person_allowance %];edit">Edit</a>]
 <h2>person_allowance </h2>
 <table>
+ <tr><th>carried_forward</th><td>[% model.carried_forward %]</td></tr>
+ <tr><th>pro_rata_allowance</th><td>[% model.pro_rata_allowance %]</td></tr>
+ <tr><th>remaining</th><td>[% model.remaining %]</td></tr>
+ <tr><th>total_allowance</th><td>[% model.total_allowance %]</td></tr>
+ <tr><th>year</th><td>[% model.year %]</td></tr>
  <tr>
   <th>person</th>
   <td>[<a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">details</a>]</td>

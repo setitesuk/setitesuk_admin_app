@@ -2,11 +2,11 @@
 <h2>responsibility_fors </h2>
 <table id="responsibility_for_list">
  <caption>responsibility_for list</caption>
- <thead><tr></tr></thead>
+ <thead><tr><th>id_manager</th><th>push_to_further_manager</th></tr></thead>
  <tbody>
 [% FOREACH responsibility_for = model.responsibility_fors %]
 <tr>
- 
+ <td>[% responsibility_for.id_manager %]</td><td>[% responsibility_for.push_to_further_manager %]</td>
  <td>[<a href="[% SCRIPT_NAME %]/responsibility_for/[% responsibility_for.id_responsibility_for %]">details</a>]</td>
 </tr>
 [% END %]

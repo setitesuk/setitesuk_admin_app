@@ -1,6 +1,8 @@
 
 DROP TABLE IF EXISTS responsibility_for;
 CREATE TABLE responsibility_for (
+  id_manager text,
+  push_to_further_manager text,
   id_person integer,
   id_responsibility_for integer primary key autoincrement
 );

@@ -1,6 +1,11 @@
 
 DROP TABLE IF EXISTS person_allowance;
 CREATE TABLE person_allowance (
+  carried_forward text,
+  pro_rata_allowance text,
+  remaining text,
+  total_allowance text,
+  year text,
   id_person integer,
   id_person_allowance integer primary key autoincrement
 );
