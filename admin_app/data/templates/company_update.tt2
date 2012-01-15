@@ -1,0 +1,7 @@
+
+<h2>company </h2>
+company updated ok. Click <a href="[% SCRIPT_NAME %]/company/[% model.id_company %]">here</a> to continue.
+<script type="text/javascript">
+ document.location.href="[% SCRIPT_NAME %]/company/[% model.id_company %]";
+</script>
+ 

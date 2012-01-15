@@ -1,0 +1,15 @@
+
+<h2>company </h2>
+<form method="post" action="[% model.id_company %]">
+ <ul>
+  <li>
+   <label for="email_domain">email_domain</label>
+   <input type="text" id="email_domain" name="email_domain" value="[% model.email_domain %]" />
+  </li>  <li>
+   <label for="name">name</label>
+   <input type="text" id="name" name="name" value="[% model.name %]" />
+  </li>
+ </ul>
+ <input type="submit" value="Update" />
+</form>
+ 

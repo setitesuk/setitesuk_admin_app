@@ -6,9 +6,13 @@
 
 </table>
 
+[% PROCESS team_company_list.tt2 %]
+
 [% PROCESS person_team_list.tt2 %]
 
 
+
+ [<a href="[% SCRIPT_NAME %]/team_company/;add?id_team=[% model.id_team %]">Add team_company</a>]
 
  [<a href="[% SCRIPT_NAME %]/person_team/;add?id_team=[% model.id_team %]">Add person_team</a>]
 

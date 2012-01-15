@@ -1,0 +1,11 @@
+
+DROP TABLE IF EXISTS company;
+CREATE TABLE company (
+  email_domain text,
+  name text,
+  id_email_rule integer,
+  id_company integer primary key autoincrement
+);
+
+CREATE INDEX company_id_email_rule on company (id_email_rule);
+ 

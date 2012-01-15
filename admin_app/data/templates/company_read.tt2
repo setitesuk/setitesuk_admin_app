@@ -1,0 +1,19 @@
+
+[<a href="[% model.id_company %];edit">Edit</a>]
+<h2>company </h2>
+<table>
+ <tr><th>email_domain</th><td>[% model.email_domain %]</td></tr>
+ <tr><th>name</th><td>[% model.name %]</td></tr>
+ <tr>
+  <th>email_rule</th>
+  <td>[<a href="[% SCRIPT_NAME %]/email_rule/[% model.id_email_rule %]">details</a>]</td>
+ </tr>
+</table>
+
+[% PROCESS team_company_list.tt2 %]
+
+
+
+ [<a href="[% SCRIPT_NAME %]/team_company/;add?id_company=[% model.id_company %]">Add team_company</a>]
+
+ 

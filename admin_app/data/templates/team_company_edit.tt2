@@ -1,0 +1,9 @@
+
+<h2>team_company </h2>
+<form method="post" action="[% model.id_team_company %]">
+ <ul>
+
+ </ul>
+ <input type="submit" value="Update" />
+</form>
+ 

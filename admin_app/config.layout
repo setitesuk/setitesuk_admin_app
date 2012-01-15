@@ -1,4 +1,7 @@
 /opt/local/bin/clearpress '-new' 'admin_app' 'person(forename) person(surname) person(initials) person(username) \
+company(name) company(email_domain) company->email_rule \
+email_rule(rule) \
+team_company() team_company->team team_company->company \
 team(teamname) \
 admingroup(groupname) \
 holiday_allowance(year) holiday_allowance(standard_allowance) \
@@ -7,4 +10,4 @@ person_team() person_team->person person_team->team \
 person_admingroup() person_admingroup->person person_admingroup->admingroup \
 responsibility_for(id_manager) responsibility_for(push_to_further_manager) responsibility_for->person \
 holiday(date_start) holiday(date_end) holiday(am) holiday(pm) holiday(approved) holiday(request_deletion) holiday(deletion_approved) holiday->person \
-expense_claim(date) expense_claim(short_description) expense_claim(long_description) expense_claim(invoice_submitted) expense_claim(manager_approved) expense_claim(hr_approved) expense_claim(paid) expense_claim->person ' '-driver' 'mysql'
+expense_claim(date) expense_claim(short_description) expense_claim(long_description) expense_claim(invoice_submitted) expense_claim(manager_approved) expense_claim(hr_approved) expense_claim(paid) expense_claim->person ' '-driver' 'SQLite'

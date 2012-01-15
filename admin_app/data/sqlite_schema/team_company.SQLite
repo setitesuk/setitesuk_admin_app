@@ -1,0 +1,11 @@
+
+DROP TABLE IF EXISTS team_company;
+CREATE TABLE team_company (
+  id_team integer,
+  id_company integer,
+  id_team_company integer primary key autoincrement
+);
+
+CREATE INDEX team_company_id_team on team_company (id_team);
+CREATE INDEX team_company_id_company on team_company (id_company);
+ 

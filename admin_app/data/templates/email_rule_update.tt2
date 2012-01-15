@@ -1,0 +1,7 @@
+
+<h2>email_rule </h2>
+email_rule updated ok. Click <a href="[% SCRIPT_NAME %]/email_rule/[% model.id_email_rule %]">here</a> to continue.
+<script type="text/javascript">
+ document.location.href="[% SCRIPT_NAME %]/email_rule/[% model.id_email_rule %]";
+</script>
+ 

@@ -1,0 +1,15 @@
+
+[<a href="[% model.id_email_rule %];edit">Edit</a>]
+<h2>email_rule </h2>
+<table>
+ <tr><th>rule</th><td>[% model.rule %]</td></tr>
+
+</table>
+
+[% PROCESS company_list.tt2 %]
+
+
+
+ [<a href="[% SCRIPT_NAME %]/company/;add?id_email_rule=[% model.id_email_rule %]">Add company</a>]
+
+ 
