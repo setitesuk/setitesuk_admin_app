@@ -1,9 +1,9 @@
 
 DROP TABLE IF EXISTS holiday_allowance;
 CREATE TABLE holiday_allowance (
-  standard_allowance text,
+  id_holiday_allowance integer primary key autoincrement,
   year text,
-  id_holiday_allowance integer primary key autoincrement
+  standard_allowance text
 );
 
  

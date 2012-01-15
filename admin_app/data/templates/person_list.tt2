@@ -2,11 +2,11 @@
 <h2>people </h2>
 <table id="person_list">
  <caption>person list</caption>
- <thead><tr></tr></thead>
+ <thead><tr><th>forename</th><th>initials</th><th>surname</th><th>username</th></tr></thead>
  <tbody>
 [% FOREACH person = model.people %]
 <tr>
- 
+ <td>[% person.forename %]</td><td>[% person.initials %]</td><td>[% person.surname %]</td><td>[% person.username %]</td>
  <td>[<a href="[% SCRIPT_NAME %]/person/[% person.id_person %]">details</a>]</td>
 </tr>
 [% END %]

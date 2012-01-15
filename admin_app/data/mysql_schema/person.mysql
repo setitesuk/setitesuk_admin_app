@@ -2,7 +2,10 @@
 DROP TABLE IF EXISTS person;
 CREATE TABLE `person` (
   `id_person` bigint(20) unsigned NOT NULL auto_increment,
-
+  `username` char(128) NOT NULL,
+  `forename` char(128) NOT NULL,
+  `initials` char(128) NOT NULL,
+  `surname` char(128) NOT NULL,
   PRIMARY KEY  (`id_person`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  

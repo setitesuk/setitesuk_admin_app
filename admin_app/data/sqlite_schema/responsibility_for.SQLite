@@ -1,11 +1,12 @@
 
 DROP TABLE IF EXISTS responsibility_for;
 CREATE TABLE responsibility_for (
+  id_responsibility_for integer primary key autoincrement,
   id_manager text,
-  push_to_further_manager text,
   id_person integer,
-  id_responsibility_for integer primary key autoincrement
+  push_to_further_manager text
 );
 
 CREATE INDEX responsibility_for_id_person on responsibility_for (id_person);
+CREATE INDEX responsibility_for_id_manager on responsibility_for (id_manager);
  

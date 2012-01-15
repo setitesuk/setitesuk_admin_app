@@ -1,8 +1,8 @@
 
 DROP TABLE IF EXISTS admingroup;
 CREATE TABLE admingroup (
-  groupname text,
-  id_admingroup integer primary key autoincrement
+  id_admingroup integer primary key autoincrement,
+  groupname text
 );
 
  

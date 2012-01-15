@@ -1,9 +1,9 @@
 
 DROP TABLE IF EXISTS person_admingroup;
 CREATE TABLE person_admingroup (
+  id_person_admingroup integer primary key autoincrement,
   id_person integer,
-  id_admingroup integer,
-  id_person_admingroup integer primary key autoincrement
+  id_admingroup integer
 );
 
 CREATE INDEX person_admingroup_id_person on person_admingroup (id_person);

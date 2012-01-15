@@ -12,7 +12,7 @@ __PACKAGE__->has_all();
 sub fields {
   return qw(id_expense_claim
 	    id_person 
-	    );
+	    date hr_approved invoice_submitted long_description manager_approved paid short_description );
 }
 
 1;

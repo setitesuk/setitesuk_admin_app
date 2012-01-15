@@ -2,6 +2,13 @@
 [<a href="[% model.id_expense_claim %];edit">Edit</a>]
 <h2>expense_claim </h2>
 <table>
+ <tr><th>date</th><td>[% model.date %]</td></tr>
+ <tr><th>hr_approved</th><td>[% model.hr_approved %]</td></tr>
+ <tr><th>invoice_submitted</th><td>[% model.invoice_submitted %]</td></tr>
+ <tr><th>long_description</th><td>[% model.long_description %]</td></tr>
+ <tr><th>manager_approved</th><td>[% model.manager_approved %]</td></tr>
+ <tr><th>paid</th><td>[% model.paid %]</td></tr>
+ <tr><th>short_description</th><td>[% model.short_description %]</td></tr>
  <tr>
   <th>person</th>
   <td>[<a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">details</a>]</td>

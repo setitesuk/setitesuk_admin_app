@@ -2,6 +2,10 @@
 [<a href="[% model.id_person %];edit">Edit</a>]
 <h2>person </h2>
 <table>
+ <tr><th>forename</th><td>[% model.forename %]</td></tr>
+ <tr><th>initials</th><td>[% model.initials %]</td></tr>
+ <tr><th>surname</th><td>[% model.surname %]</td></tr>
+ <tr><th>username</th><td>[% model.username %]</td></tr>
 
 </table>
 

@@ -1,9 +1,9 @@
 
 DROP TABLE IF EXISTS person_team;
 CREATE TABLE person_team (
+  id_person_team integer primary key autoincrement,
   id_person integer,
-  id_team integer,
-  id_person_team integer primary key autoincrement
+  id_team integer
 );
 
 CREATE INDEX person_team_id_person on person_team (id_person);

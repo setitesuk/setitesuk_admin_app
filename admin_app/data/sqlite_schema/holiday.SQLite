@@ -1,15 +1,15 @@
 
 DROP TABLE IF EXISTS holiday;
 CREATE TABLE holiday (
-  am text,
-  approved text,
-  date_end text,
-  date_start text,
-  deletion_approved text,
-  pm text,
-  request_deletion text,
+  id_holiday integer primary key autoincrement,
   id_person integer,
-  id_holiday integer primary key autoincrement
+  date_start text,
+  date_end text,
+  am text,
+  pm text,
+  approved text,
+  request_deletion text,
+  deletion_approved text
 );
 
 CREATE INDEX holiday_id_person on holiday (id_person);

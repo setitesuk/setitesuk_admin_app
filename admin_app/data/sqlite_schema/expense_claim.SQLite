@@ -1,8 +1,15 @@
 
 DROP TABLE IF EXISTS expense_claim;
 CREATE TABLE expense_claim (
+  id_expense_claim integer primary key autoincrement,
   id_person integer,
-  id_expense_claim integer primary key autoincrement
+  date text,
+  short_description text,
+  long_description text,
+  manager_approved text,
+  invoice_submitted text,
+  hr_approved text,
+  paid text
 );
 
 CREATE INDEX expense_claim_id_person on expense_claim (id_person);

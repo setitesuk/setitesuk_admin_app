@@ -1,7 +1,11 @@
 
 DROP TABLE IF EXISTS person;
 CREATE TABLE person (
-  id_person integer primary key autoincrement
+  id_person integer primary key autoincrement,
+  username text,
+  forename text,
+  initials text,
+  surname text
 );
 
  

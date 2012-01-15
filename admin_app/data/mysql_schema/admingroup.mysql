@@ -3,7 +3,6 @@ DROP TABLE IF EXISTS admingroup;
 CREATE TABLE `admingroup` (
   `id_admingroup` bigint(20) unsigned NOT NULL auto_increment,
   `groupname` char(128) NOT NULL,
-
   PRIMARY KEY  (`id_admingroup`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  

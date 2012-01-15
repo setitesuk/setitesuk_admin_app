@@ -12,7 +12,7 @@ __PACKAGE__->has_all();
 sub fields {
   return qw(id_person
 	    
-	    );
+	    forename initials surname username );
 }
 
 1;

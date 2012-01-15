@@ -2,6 +2,13 @@
 DROP TABLE IF EXISTS expense_claim;
 CREATE TABLE `expense_claim` (
   `id_expense_claim` bigint(20) unsigned NOT NULL auto_increment,
+  `date` char(128) NOT NULL,
+  `hr_approved` char(128) NOT NULL,
+  `invoice_submitted` char(128) NOT NULL,
+  `long_description` char(128) NOT NULL,
+  `manager_approved` char(128) NOT NULL,
+  `paid` char(128) NOT NULL,
+  `short_description` char(128) NOT NULL,
 
   `id_person` bigint(20) unsigned NOT NULL,
   KEY `expense_claim_person` (`id_person`),

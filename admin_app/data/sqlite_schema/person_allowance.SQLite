@@ -1,13 +1,13 @@
 
 DROP TABLE IF EXISTS person_allowance;
 CREATE TABLE person_allowance (
-  carried_forward text,
-  pro_rata_allowance text,
-  remaining text,
-  total_allowance text,
-  year text,
+  id_person_allowance integer primary key autoincrement,
   id_person integer,
-  id_person_allowance integer primary key autoincrement
+  year text,
+  pro_rata_allowance text,
+  carried_forward text,
+  total_allowance text,
+  remaining text
 );
 
 CREATE INDEX person_allowance_id_person on person_allowance (id_person);
