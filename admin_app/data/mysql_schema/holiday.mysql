@@ -1,0 +1,19 @@
+
+DROP TABLE IF EXISTS holiday;
+CREATE TABLE `holiday` (
+  `id_holiday` bigint(20) unsigned NOT NULL auto_increment,
+  `am` char(128) NOT NULL,
+  `approved` char(128) NOT NULL,
+  `date_end` char(128) NOT NULL,
+  `date_start` char(128) NOT NULL,
+  `deletion_approved` char(128) NOT NULL,
+  `pm` char(128) NOT NULL,
+  `request_deletion` char(128) NOT NULL,
+
+  `id_person` bigint(20) unsigned NOT NULL,
+  KEY `holiday_person` (`id_person`),
+  CONSTRAINT `holiday_person` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`),
+
+  PRIMARY KEY  (`id_holiday`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 

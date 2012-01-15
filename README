@@ -40,4 +40,25 @@ person_admingroup() person_admingroup->person person_admingroup->admingroup \
 responsibility_for(id_manager) responsibility_for(push_to_further_manager) responsibility_for->person \
 holiday(date_start) holiday(date_end) holiday(am) holiday(pm) holiday(approved) holiday(request_deletion) holiday(deletion_approved) holiday->person \
 expense_claim(date short_description long_description invoice_submitted manager_approved hr_approved paid) expense_claim->person ' \
--driver SQLite
+-driver mysql
+
+You now need to configure your database.
+1. Check and/or modify admin_app/data/config.ini
+2. If necessary create a database, something like this:
+  mysqladmin -uroot create admin_app
+3. cat admin_app/data/schema/holiday_allowance.mysql \
+       admin_app/data/schema/admingroup.mysql \
+       admin_app/data/schema/person.mysql \
+       admin_app/data/schema/team.mysql \
+       admin_app/data/schema/holiday.mysql \
+       admin_app/data/schema/expense_claim.mysql \
+       admin_app/data/schema/responsibility_for.mysql \
+       admin_app/data/schema/person_allowance.mysql \
+       admin_app/data/schema/person_team.mysql \
+       admin_app/data/schema/person_admingroup.mysql \
+       | mysql -uroot admin_app
+
+1. Check and/or modify admin_app/data/config.ini
+2. If necessary create a database, something like this:
+  cat admin_app/data/schema/*.SQLite | sqlite3 admin_app/admin_app
+

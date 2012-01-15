@@ -1,0 +1,17 @@
+
+DROP TABLE IF EXISTS person_allowance;
+CREATE TABLE `person_allowance` (
+  `id_person_allowance` bigint(20) unsigned NOT NULL auto_increment,
+  `carried_forward` char(128) NOT NULL,
+  `pro_rata_allowance` char(128) NOT NULL,
+  `remaining` char(128) NOT NULL,
+  `total_allowance` char(128) NOT NULL,
+  `year` char(128) NOT NULL,
+
+  `id_person` bigint(20) unsigned NOT NULL,
+  KEY `person_allowance_person` (`id_person`),
+  CONSTRAINT `person_allowance_person` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`),
+
+  PRIMARY KEY  (`id_person_allowance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 

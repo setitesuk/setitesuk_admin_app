@@ -1,0 +1,12 @@
+
+DROP TABLE IF EXISTS expense_claim;
+CREATE TABLE `expense_claim` (
+  `id_expense_claim` bigint(20) unsigned NOT NULL auto_increment,
+
+  `id_person` bigint(20) unsigned NOT NULL,
+  KEY `expense_claim_person` (`id_person`),
+  CONSTRAINT `expense_claim_person` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`),
+
+  PRIMARY KEY  (`id_expense_claim`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 

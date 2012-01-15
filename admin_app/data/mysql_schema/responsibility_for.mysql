@@ -1,0 +1,14 @@
+
+DROP TABLE IF EXISTS responsibility_for;
+CREATE TABLE `responsibility_for` (
+  `id_responsibility_for` bigint(20) unsigned NOT NULL auto_increment,
+  `id_manager` char(128) NOT NULL,
+  `push_to_further_manager` char(128) NOT NULL,
+
+  `id_person` bigint(20) unsigned NOT NULL,
+  KEY `responsibility_for_person` (`id_person`),
+  CONSTRAINT `responsibility_for_person` FOREIGN KEY (`id_person`) REFERENCES `person` (`id_person`),
+
+  PRIMARY KEY  (`id_responsibility_for`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
