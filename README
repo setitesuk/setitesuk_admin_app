@@ -49,19 +49,19 @@ You now need to configure your database.
 1. Check and/or modify admin_app/data/config.ini
 2. If necessary create a database, something like this:
   mysqladmin -uroot create admin_app
-3. cat admin_app/data/schema/email_rule.mysql \
-       admin_app/data/schema/holiday_allowance.mysql \
-       admin_app/data/schema/admingroup.mysql \
-       admin_app/data/schema/person.mysql \
-       admin_app/data/schema/team.mysql \
-       admin_app/data/schema/holiday.mysql \
-       admin_app/data/schema/expense_claim.mysql \
-       admin_app/data/schema/responsibility_for.mysql \
-       admin_app/data/schema/person_allowance.mysql \
-       admin_app/data/schema/company.mysql \
-       admin_app/data/schema/person_team.mysql \
-       admin_app/data/schema/person_admingroup.mysql \
-       admin_app/data/schema/team_company.mysql \
+3. cat admin_app/data/mysql_schema/email_rule.mysql \
+       admin_app/data/mysql_schema/holiday_allowance.mysql \
+       admin_app/data/mysql_schema/admingroup.mysql \
+       admin_app/data/mysql_schema/person.mysql \
+       admin_app/data/mysql_schema/team.mysql \
+       admin_app/data/mysql_schema/holiday.mysql \
+       admin_app/data/mysql_schema/expense_claim.mysql \
+       admin_app/data/mysql_schema/responsibility_for.mysql \
+       admin_app/data/mysql_schema/person_allowance.mysql \
+       admin_app/data/mysql_schema/company.mysql \
+       admin_app/data/mysql_schema/person_team.mysql \
+       admin_app/data/mysql_schema/person_admingroup.mysql \
+       admin_app/data/mysql_schema/team_company.mysql \
        | mysql -uroot admin_app
 
 1. Check and/or modify admin_app/data/config.ini

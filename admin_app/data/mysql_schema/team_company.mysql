@@ -2,15 +2,12 @@
 DROP TABLE IF EXISTS team_company;
 CREATE TABLE `team_company` (
   `id_team_company` bigint(20) unsigned NOT NULL auto_increment,
-
   `id_team` bigint(20) unsigned NOT NULL,
-  KEY `team_company_team` (`id_team`),
-  CONSTRAINT `team_company_team` FOREIGN KEY (`id_team`) REFERENCES `team` (`id_team`),
-
   `id_company` bigint(20) unsigned NOT NULL,
+  KEY `team_company_team` (`id_team`),
   KEY `team_company_company` (`id_company`),
   CONSTRAINT `team_company_company` FOREIGN KEY (`id_company`) REFERENCES `company` (`id_company`),
-
+  CONSTRAINT `team_company_team` FOREIGN KEY (`id_team`) REFERENCES `team` (`id_team`),
   PRIMARY KEY  (`id_team_company`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
