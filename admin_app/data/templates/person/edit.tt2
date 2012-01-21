@@ -1,21 +1,6 @@
-
-<h2>person </h2>
-<form method="post" action="[% model.id_person %]">
- <ul>
-  <li>
-   <label for="forename">forename</label>
-   <input type="text" id="forename" name="forename" value="[% model.forename %]" />
-  </li>  <li>
-   <label for="initials">initials</label>
-   <input type="text" id="initials" name="initials" value="[% model.initials %]" />
-  </li>  <li>
-   <label for="surname">surname</label>
-   <input type="text" id="surname" name="surname" value="[% model.surname %]" />
-  </li>  <li>
-   <label for="username">username</label>
-   <input type="text" id="username" name="username" value="[% model.username %]" />
-  </li>
- </ul>
+<h2>[% model.forename %] [% model.initials %] [% model.surname %]</h2>
+<form method="post" action="[% SCRIPT_NAME %]/person/[% model.id_person %]">
+[% PROCESS person/form_fields.tt2 %]
  <input type="submit" value="Update" />
 </form>
  

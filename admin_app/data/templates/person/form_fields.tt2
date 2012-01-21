@@ -1,0 +1,22 @@
+<ul>
+ <li>
+  <label for="forename">Forename</label>
+  <input type="text" id="forename" name="forename" value="[% model.forename %]" />
+ </li>
+ <li>
+  <label for="middle_initials">Middle Initials</label>
+  <input type="text" id="initials" name="initials" value="[% model.initials %]" />
+ </li>
+ <li>
+  <label for="surname">Surname</label>
+  <input type="text" id="surname" name="surname" value="[% model.surname %]" />
+ </li>
+ <li>
+  <label for="username">username</label>
+  <input type="text" id="username" name="username" value="[% model.username %]" />
+ </li>
+ <li>
+   <label for="username">Team</label>
+   <select id="id_team_company" name="id_team_company">[% FOREACH team_company IN model.team_companies %]<option value="[% team_company.id_team_company %]">[% team_company.company.name %]/[% team_company.team.teamname %][% END %]</select>
+ </li>
+</ul>

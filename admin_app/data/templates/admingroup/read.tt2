@@ -6,7 +6,7 @@
 
 </table>
 
-[% PROCESS person_admingroup_list.tt2 %]
+[% PROCESS person_admingroup/list.tt2 %]
 
 
 

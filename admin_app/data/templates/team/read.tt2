@@ -1,19 +1,21 @@
 
 [<a href="[% model.id_team %];edit">Edit</a>]
-<h2>team </h2>
+<h2>[% model.teamname %]</h2>
+
+<dl class="tbl">
+ <dt>Company</dt>
+ <dd><a href="[% SCRIPT_NAME %]/company/[% model.company.id_company %]">[% model.company.name %]</a></dd>
+</dl>
+
+<h3>Team Members</h3>
 <table>
- <tr><th>teamname</th><td>[% model.teamname %]</td></tr>
-
+  <caption>Team Members</caption>
+  [% PROCESS person/table_header.tt2 %]
+  <tbody>
+[%- FOREACH person IN model.persons %]
+  [% PROCESS person/table_row.tt2 %]
+[%- END %]
+  </tbody>
 </table>
-
-[% PROCESS team_company_list.tt2 %]
-
-[% PROCESS person_team_list.tt2 %]
-
-
-
- [<a href="[% SCRIPT_NAME %]/team_company/;add?id_team=[% model.id_team %]">Add team_company</a>]
-
- [<a href="[% SCRIPT_NAME %]/person_team/;add?id_team=[% model.id_team %]">Add person_team</a>]
 
  

@@ -1,25 +1,26 @@
 
 [<a href="[% model.id_person %];edit">Edit</a>]
-<h2>person </h2>
+<h2>[% model.forename %] [% model.initials %] [% model.surname %]</h2>
 <table>
- <tr><th>forename</th><td>[% model.forename %]</td></tr>
- <tr><th>initials</th><td>[% model.initials %]</td></tr>
- <tr><th>surname</th><td>[% model.surname %]</td></tr>
+ <tr><th>Forename</th><td>[% model.forename %]</td></tr>
+ <tr><th>Middle Initials</th><td>[% model.initials %]</td></tr>
+ <tr><th>Surname</th><td>[% model.surname %]</td></tr>
  <tr><th>username</th><td>[% model.username %]</td></tr>
-
+ <tr><th>Company</th><td>[% IF model.team %]<a href="[% SCRIPT_NAME %]/company/[% model.company.id_company %]">[% model.team.company.name %]</a>[% ELSE %]<a href="[% SCRIPT_NAME %]/person/[% model.id_person %];edit">Edit to add company/team</a>[% END %]</td></tr>
+ <tr><th>Team</th><td>[% IF model.team %]<a href="[% SCRIPT_NAME %]/team/[% model.team.id_team %]">[% model.team.teamname %][% ELSE %]<a href="[% SCRIPT_NAME %]/person/[% model.id_person %];edit">Edit to add company/team</a>[% END %]</td></tr>
 </table>
 
-[% PROCESS person_allowance_list.tt2 %]
+[% PROCESS person_allowance/list.tt2 %]
 
-[% PROCESS person_team_list.tt2 %]
+[% PROCESS person_team/list.tt2 %]
 
-[% PROCESS person_admingroup_list.tt2 %]
+[% PROCESS person_admingroup/list.tt2 %]
 
-[% PROCESS responsibility_for_list.tt2 %]
+[% PROCESS responsibility_for/list.tt2 %]
 
-[% PROCESS holiday_list.tt2 %]
+[% PROCESS holiday/list.tt2 %]
 
-[% PROCESS expense_claim_list.tt2 %]
+[% PROCESS expense_claim/list.tt2 %]
 
 
 

@@ -1,15 +1,9 @@
-
-<h2>teams </h2>
 <table id="team_list">
- <caption>team list</caption>
- <thead><tr><th>teamname</th></tr></thead>
+ [% PROCESS team/table_header.tt2 %]
  <tbody>
-[% FOREACH team = model.teams %]
-<tr>
- <td>[% team.teamname %]</td>
- <td>[<a href="[% SCRIPT_NAME %]/team/[% team.id_team %]">details</a>]</td>
-</tr>
-[% END %]
+[%- FOREACH team = model.teams %]
+  [% PROCESS team/table_row.tt2 %]
+[%- END %]
  </tbody>
 </table>
 

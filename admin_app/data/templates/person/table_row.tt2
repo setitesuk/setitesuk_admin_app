@@ -1,0 +1,1 @@
+<td><a href="[% SCRIPT_NAME %]/person/[% person.id_person %]">[% person.username %]</td><td>[% person.forename %]</td><td>[% person.initials %]</td><td>[% person.surname %]</td><td>[<a href="[% SCRIPT_NAME %]/person/[% person.id_person %]">details</a>]</td>

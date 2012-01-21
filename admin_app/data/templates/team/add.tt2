@@ -1,11 +1,16 @@
 
 <h2>team </h2>
 <form method="post" action="[% SCRIPT_NAME %]/team/">
- <ul>  <li>
-   <label for="teamname">teamname</label>
-   <input type="text" id="teamname" name="teamname" value="[% model.teamname %]" />
-  </li>
- </ul>
- <input type="submit" value="Add" />
+  <ul>
+    <li>
+      <label for="teamname">Team Name</label>
+      <input type="text" id="teamname" name="teamname" value="[% model.teamname %]" />
+    </li>
+    <li>
+      <label for="company">Company</label>
+      <select id="id_company" name="id_company">[% FOREACH comp IN model.all_companies %]<option value="[% comp.id_company %]">[% comp.name %]</option>[% END %]</select>
+    </li>
+  </ul>
+  <input type="submit" value="Add" />
 </form>
  

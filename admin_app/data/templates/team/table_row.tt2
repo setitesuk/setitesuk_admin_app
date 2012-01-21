@@ -1,0 +1,4 @@
+<tr>
+ <td><a href="[% SCRIPT_NAME %]/team/[% team.id_team %]">[% team.teamname %]</a></td>
+ <td>[<a href="[% SCRIPT_NAME %]/team/[% team.id_team %]">details</a>]</td>
+</tr>

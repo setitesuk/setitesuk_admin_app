@@ -6,7 +6,7 @@
 
 </table>
 
-[% PROCESS company_list.tt2 %]
+[% PROCESS company/list.tt2 %]
 
 
 
