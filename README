@@ -1,3 +1,6 @@
+This has had the data/templates directory sorted to use entity directories (for clarity of maintenance)
+This therefore needs clearpress-422 minimum version
+
 person(forename,surname,initials, username)
 id_person, forename, surname, initials, username
 
