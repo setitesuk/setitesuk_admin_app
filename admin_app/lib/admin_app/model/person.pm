@@ -6,13 +6,21 @@ use base qw(ClearPress::model);
 use admin_app::model::team_company;
 
 __PACKAGE__->mk_accessors(__PACKAGE__->fields());
-__PACKAGE__->has_a([qw()]);
-__PACKAGE__->has_many([qw(person_allowance person_team person_admingroup responsibility_for holiday expense_claim )]);
-__PACKAGE__->has_many_through( [ qw{team|person_team} ] );
+__PACKAGE__->has_many( [ qw( person_allowance person_team person_admingroup responsibility_for holiday expense_claim ) ] );
+__PACKAGE__->has_many_through( [ qw{ team|person_team admingroup|person_admingroup } ] );
 __PACKAGE__->has_all();
 
 sub fields {
   return qw( id_person forename initials surname username );
+}
+
+sub full_name {
+  my ( $self ) = @_;
+  my $forename = $self->forename;
+  if ( $self->initials ) {
+    $forename .= q{ } . $self->initials;
+  }
+  return $forename . q{ } . $self->surname;
 }
 
 sub team {
@@ -84,6 +92,30 @@ sub _person_team_save {
   } )->save();
 
   return 1;  
+}
+
+sub manager {
+  my ( $self ) = @_;
+  my $manager;
+  eval {
+    $manager = @{ $self->responsibility_fors }[0]->manager();
+  } or do {
+    $manager = $self;
+  };
+  return $manager;
+}
+
+sub has_subordinates {
+  my ( $self ) = @_;
+  return scalar @{ $self->subordinates };
+}
+
+sub subordinates {
+  my ( $self ) = @_;
+  my $return = admin_app::model::responsibility_for->new( {
+    id_manager => $self->id_person()
+  } )->subordinates() || [];
+  return $return;
 }
 
 1;

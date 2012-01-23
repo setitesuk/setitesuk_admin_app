@@ -1,14 +1,11 @@
-
-<h2>people </h2>
+<h2>People</h2>
 <table id="person_list">
- <caption>person list</caption>
+ <caption>People</caption>
  [% PROCESS person/table_header.tt2 %]
  <tbody>
-[% FOREACH person = model.people %]
-<tr>
+[%- FOREACH person = model.people %]
  [% PROCESS person/table_row.tt2 %]
-</tr>
-[% END %]
+[%- END %]
  </tbody>
 </table>
 

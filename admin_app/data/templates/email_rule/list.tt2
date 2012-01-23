@@ -1,13 +1,11 @@
-
-<h2>email_rules </h2>
 <table id="email_rule_list">
- <caption>email_rule list</caption>
- <thead><tr><th>rule</th></tr></thead>
+ <caption>Email Rule List</caption>
+ <thead><tr><th>Rule</th></tr></thead>
  <tbody>
 [% FOREACH email_rule = model.email_rules %]
 <tr>
  <td>[% email_rule.rule %]</td>
- <td>[<a href="[% SCRIPT_NAME %]/email_rule/[% email_rule.id_email_rule %]">details</a>]</td>
+ <td>[<a href="[% SCRIPT_NAME %]/email_rule/[% email_rule.id_email_rule %];edit">edit</a>]</td>
 </tr>
 [% END %]
  </tbody>

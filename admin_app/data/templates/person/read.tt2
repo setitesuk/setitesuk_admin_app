@@ -1,6 +1,5 @@
-
 [<a href="[% model.id_person %];edit">Edit</a>]
-<h2>[% model.forename %] [% model.initials %] [% model.surname %]</h2>
+<h2>[% model.full_name %]</h2>
 <table>
  <tr><th>Forename</th><td>[% model.forename %]</td></tr>
  <tr><th>Middle Initials</th><td>[% model.initials %]</td></tr>
@@ -8,19 +7,26 @@
  <tr><th>username</th><td>[% model.username %]</td></tr>
  <tr><th>Company</th><td>[% IF model.team %]<a href="[% SCRIPT_NAME %]/company/[% model.company.id_company %]">[% model.team.company.name %]</a>[% ELSE %]<a href="[% SCRIPT_NAME %]/person/[% model.id_person %];edit">Edit to add company/team</a>[% END %]</td></tr>
  <tr><th>Team</th><td>[% IF model.team %]<a href="[% SCRIPT_NAME %]/team/[% model.team.id_team %]">[% model.team.teamname %][% ELSE %]<a href="[% SCRIPT_NAME %]/person/[% model.id_person %];edit">Edit to add company/team</a>[% END %]</td></tr>
+ <tr><th>Line Manager</th><td>[% IF model.manager.id_person == model.id_person %]No Manager[% ELSE %]<a href="[% SCRIPT_NAME %]/person/[% model.manager.id_person %]">[% model.manager.full_name %]</td>[% END %]</tr>
 </table>
 
 [% PROCESS person_allowance/list.tt2 %]
 
-[% PROCESS person_team/list.tt2 %]
-
-[% PROCESS person_admingroup/list.tt2 %]
-
-[% PROCESS responsibility_for/list.tt2 %]
-
 [% PROCESS holiday/list.tt2 %]
 
+[%- IF model.has_subordinates %]
+<table id="line_management_responsibility">
+  <caption>Line Management Responsibility</caption>
+  [% PROCESS person/table_header.tt2 %]
+  <tbody>[% FOREACH person IN model.subordinates %]
+    [% PROCESS person/table_row.tt2 %]
+  [% END %]</tbody>
+</table>
+[%- END %]
+
 [% PROCESS expense_claim/list.tt2 %]
+
+[% PROCESS person_admingroup/list.tt2 %]
 
 
 

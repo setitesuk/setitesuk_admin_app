@@ -1,0 +1,6 @@
+<ul>
+  <li>
+    <label for="rule">Rule</label>
+    <input type="text" id="rule" name="rule" value="[% model.rule %]" />
+  </li>
+ </ul>

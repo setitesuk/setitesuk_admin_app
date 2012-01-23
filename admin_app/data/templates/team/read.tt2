@@ -1,4 +1,3 @@
-
 [<a href="[% model.id_team %];edit">Edit</a>]
 <h2>[% model.teamname %]</h2>
 
@@ -7,12 +6,11 @@
  <dd><a href="[% SCRIPT_NAME %]/company/[% model.company.id_company %]">[% model.company.name %]</a></dd>
 </dl>
 
-<h3>Team Members</h3>
 <table>
   <caption>Team Members</caption>
   [% PROCESS person/table_header.tt2 %]
   <tbody>
-[%- FOREACH person IN model.persons %]
+[%- FOREACH person IN model.people %]
   [% PROCESS person/table_row.tt2 %]
 [%- END %]
   </tbody>

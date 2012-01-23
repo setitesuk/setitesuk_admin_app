@@ -18,4 +18,10 @@
   </tbody>
 </table>
 
- 
+
+<table>
+  [% PROCESS holiday_allowance/table_header.tt2 %]
+  <tbody>[% FOREACH holiday_allowance IN model.holiday_allowances %]
+    [% PROCESS holiday_allowance/table_row.tt2 %]
+  [% END %]</tbody>
+</table>

@@ -1,5 +1,4 @@
-
-<h2>team </h2>
+<h2>Add a Team to a Company</h2>
 <form method="post" action="[% SCRIPT_NAME %]/team/">
   <ul>
     <li>

@@ -1,0 +1,1 @@
+<tr><td>[% holiday_allowance.company.name %]</td><td>[% holiday_allowance.year %]</td><td>[% holiday_allowance.standard_allowance %]</td><td>[<a href="[% SCRIPT_NAME %]/holiday_allowance/[% holiday_allowance.id_holiday_allowance %]">details</a>]</td></tr>

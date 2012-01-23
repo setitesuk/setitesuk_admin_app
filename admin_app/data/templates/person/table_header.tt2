@@ -1,5 +1,5 @@
 <thead>
   <tr>
-    <th>username</th><th>Forename</th><th>Initials</th><th>Surname</th>
+    <th>username</th><th>Forename</th><th>Initials</th><th>Surname</th><th>Team</th>
   </tr>
 </thead>

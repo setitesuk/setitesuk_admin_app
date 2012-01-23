@@ -1,12 +1,6 @@
-
-<h2>email_rule </h2>
+<h2>Edit Email Rule</h2>
 <form method="post" action="[% model.id_email_rule %]">
- <ul>
-  <li>
-   <label for="rule">rule</label>
-   <input type="text" id="rule" name="rule" value="[% model.rule %]" />
-  </li>
- </ul>
- <input type="submit" value="Update" />
+[% PROCESS email_rule/form_fields.tt2 %]
+  <input type="submit" value="Update" />
 </form>
  

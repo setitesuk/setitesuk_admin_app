@@ -1,16 +1,10 @@
-
-<h2>holiday_allowances </h2>
 <table id="holiday_allowance_list">
- <caption>holiday_allowance list</caption>
- <thead><tr><th>standard_allowance</th><th>year</th></tr></thead>
- <tbody>
-[% FOREACH holiday_allowance = model.holiday_allowances %]
-<tr>
- <td>[% holiday_allowance.standard_allowance %]</td><td>[% holiday_allowance.year %]</td>
- <td>[<a href="[% SCRIPT_NAME %]/holiday_allowance/[% holiday_allowance.id_holiday_allowance %]">details</a>]</td>
-</tr>
-[% END %]
- </tbody>
+  [% PROCESS holiday_allowance/table_header.tt2 %]
+  <tbody>
+[%- FOREACH holiday_allowance = model.holiday_allowances %]
+    [% PROCESS holiday_allowance/table_row.tt2 %]
+[%- END %]
+  </tbody>
 </table>
 
  

@@ -5,14 +5,11 @@ use warnings;
 use base qw(ClearPress::model);
 
 __PACKAGE__->mk_accessors(__PACKAGE__->fields());
-__PACKAGE__->has_a([qw(person )]);
-__PACKAGE__->has_many([qw()]);
+__PACKAGE__->has_a( [ qw( person ) ] );
 __PACKAGE__->has_all();
 
 sub fields {
-  return qw(id_expense_claim
-	    id_person 
-	    date hr_approved invoice_submitted long_description manager_approved paid short_description );
+  return qw(id_expense_claim id_person date hr_approved invoice_submitted long_description manager_approved paid short_description );
 }
 
 1;

@@ -1,11 +1,9 @@
-
 [<a href="[% model.id_holiday_allowance %];edit">Edit</a>]
-<h2>holiday_allowance </h2>
-<table>
- <tr><th>standard_allowance</th><td>[% model.standard_allowance %]</td></tr>
- <tr><th>year</th><td>[% model.year %]</td></tr>
-
-</table>
+<h2>Holiday Allowance for [% model.company.name %] during [% model.year %]</h2>
+<dl class="tbl">
+ <dt>Standard Allowance</dt>
+ <dd>[% model.standard_allowance %]</dd>
+</dl>
 
 
 

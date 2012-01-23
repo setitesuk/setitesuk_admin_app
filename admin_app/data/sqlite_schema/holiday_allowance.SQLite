@@ -2,8 +2,9 @@
 DROP TABLE IF EXISTS holiday_allowance;
 CREATE TABLE holiday_allowance (
   id_holiday_allowance integer primary key autoincrement,
+  id_company integer,
   year text,
   standard_allowance text
 );
 
- 
+CREATE INDEX holiday_allowance_id_company on holiday_allowance (id_company);

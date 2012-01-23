@@ -1,9 +1,8 @@
-
-<h2>team </h2>
+<h2>Edit Team</h2>
 <form method="post" action="[% model.id_team %]">
  <ul>
   <li>
-   <label for="teamname">teamname</label>
+   <label for="teamname">Team Name</label>
    <input type="text" id="teamname" name="teamname" value="[% model.teamname %]" />
   </li>
  </ul>

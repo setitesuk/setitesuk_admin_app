@@ -1,14 +1,6 @@
-
-<h2>holiday_allowance </h2>
+<h2>Holiday Allowance</h2>
 <form method="post" action="[% SCRIPT_NAME %]/holiday_allowance/">
- <ul>  <li>
-   <label for="standard_allowance">standard_allowance</label>
-   <input type="text" id="standard_allowance" name="standard_allowance" value="[% model.standard_allowance %]" />
-  </li>  <li>
-   <label for="year">year</label>
-   <input type="text" id="year" name="year" value="[% model.year %]" />
-  </li>
- </ul>
- <input type="submit" value="Add" />
+[% PROCESS holiday_allowance/form_fields.tt2 %]
+  <input type="submit" value="Add" />
 </form>
  

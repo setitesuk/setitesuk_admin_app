@@ -2,8 +2,11 @@
 DROP TABLE IF EXISTS holiday_allowance;
 CREATE TABLE `holiday_allowance` (
   `id_holiday_allowance` bigint(20) unsigned NOT NULL auto_increment,
+  `id_company` bigint(20) unsigned NOT NULL,
   `year` int(4) NOT NULL,
   `standard_allowance` char(128) NOT NULL,
-  PRIMARY KEY  (`id_holiday_allowance`)
+  PRIMARY KEY  (`id_holiday_allowance`),
+  KEY `holiday_allowance_company` (`id_company`),
+  CONSTRAINT `holiday_allowance_company` FOREIGN KEY (`id_company`) REFERENCES `company` (`id_company`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
