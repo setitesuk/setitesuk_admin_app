@@ -1,12 +1,8 @@
 <table id="holiday_list">
- <caption>Holidays Full</caption>
- <thead><tr><th>Start</th><th>End</th><th>am</th><th>pm</th><th>Approved</th><th>Cancel Request</th><th>Cancelation Approved</th></tr></thead>
+  [% PROCESS holiday/table_header.tt2 %]
  <tbody>
 [% FOREACH holiday = model.holidays %]
-<tr>
- <td>[% holiday.date_start %]</td><td>[% holiday.date_end %]</td><td>[% holiday.am %]</td><td>[% holiday.pm %]</td><td>[% holiday.approved %]</td><td>[% holiday.request_deletion %]</td><td>[% holiday.deletion_approved %]</td>
- <td>[<a href="[% SCRIPT_NAME %]/holiday/[% holiday.id_holiday %]">details</a>]</td>
-</tr>
+  [% PROCESS holiday/table_row.tt2 %]
 [% END %]
  </tbody>
 </table>

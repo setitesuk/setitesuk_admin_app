@@ -2,7 +2,6 @@
   <td>[% expense_claim.date %]</td>
   <td><a href="[% SCRIPT_NAME %]/person/[% expense_claim.person.id_person %]">[% expense_claim.person.username %]</a></td>
   <td>[% expense_claim.short_description %]</td>
-  <td>[% expense_claim.long_description %]</td>
   <td>[% IF expense_claim.invoice_submitted %]Yes[% ELSE %]No[% END %]</td>
   <td>[% IF expense_claim.manager_approved %]Yes[% ELSE %]No[% END %]</td>
   <td>[% IF expense_claim.hr_approved %]Yes[% ELSE %]No[% END %]</td>

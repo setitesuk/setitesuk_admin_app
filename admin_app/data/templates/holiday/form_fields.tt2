@@ -1,0 +1,38 @@
+<ul>
+[%- IF model.id_person %]
+  <input type="hidden" id="id_person" name="id_person" value="[% model.id_person %]">
+[% ELSE %]
+  <li>
+    <label for="person">Person</label>
+    <select id="id_person" name="id_person">[% FOREACH person IN model.all_people %]<option value="[% person.id_person %]">[% person.full_name %]</option>[% END %]</select>
+  </li>
+[% END %]
+  <li>
+    <label for="date_start">Start Date</label>
+    <input type="text" id="date_start" name="date_start" value="[% model.date_start %]" />
+  </li>
+  <li>
+    <label for="date_end">End Date</label>
+    <input type="text" id="date_end" name="date_end" value="[% model.date_end %]" />
+  </li>
+  <li>
+    <label for="am">am</label>
+    <select id="am" name="am"><option value="0">N</option><option value="1"[% IF model.am %] selected="1"[% END %]>Y</option></select>
+  </li> 
+  <li>
+    <label for="pm">pm</label>
+    <select id="pm" name="pm"><option value="0">N</option><option value="1"[% IF model.pm %] selected="1"[% END %]>Y</option></select>
+  </li> 
+  <li>
+    <label for="approved">Approved</label>
+    <select id="approved" name="approved"><option value="0">N</option><option value="1"[% IF model.approved %] selected="1"[% END %]>Y</option></select>
+  </li> 
+  <li>
+    <label for="request_deletion">Request Cancellation</label>
+    <select id="request_deletion" name="request_deletion"><option value="0">N</option><option value="1"[% IF model.request_deletion %] selected="1"[% END %]>Y</option></select>
+  </li>
+  <li>
+    <label for="deletion_approved">Cancellation Approved</label>
+    <select id="deletion_approved" name="deletion_approved"><option value="0">N</option><option value="1"[% IF model.deletion_approved %] selected="1"[% END %]>Y</option></select>
+  </li>
+</ul>
