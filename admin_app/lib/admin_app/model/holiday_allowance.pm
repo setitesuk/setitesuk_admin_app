@@ -2,7 +2,7 @@
 package admin_app::model::holiday_allowance;
 use strict;
 use warnings;
-use base qw(ClearPress::model);
+use base qw(admin_app::model);
 use admin_app::model::company;
 
 __PACKAGE__->mk_accessors(__PACKAGE__->fields());

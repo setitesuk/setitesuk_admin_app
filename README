@@ -39,7 +39,7 @@ email_rule(rule) \
 team_company() team_company->team team_company->company \
 team(teamname) \
 admingroup(groupname) \
-holiday_allowance(year) holiday_allowance(standard_allowance) \
+holiday_allowance(year) holiday_allowance(standard_allowance) holiday_allowance->company\
 person_allowance(year) person_allowance(pro_rata_allowance) person_allowance(carried_forward) person_allowance(total_allowance) person_allowance(remaining) person_allowance->person \
 person_team() person_team->person person_team->team \
 person_admingroup() person_admingroup->person person_admingroup->admingroup \

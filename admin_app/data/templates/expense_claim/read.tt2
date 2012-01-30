@@ -1,17 +1,17 @@
 [<a href="[% model.id_expense_claim %];edit">Edit</a>]
 <h2>Expense Claim</h2>
 <table>
- <tr><th>date</th><td>[% model.date %]</td></tr>
- <tr><th>hr_approved</th><td>[% model.hr_approved %]</td></tr>
- <tr><th>invoice_submitted</th><td>[% model.invoice_submitted %]</td></tr>
- <tr><th>long_description</th><td>[% model.long_description %]</td></tr>
- <tr><th>manager_approved</th><td>[% model.manager_approved %]</td></tr>
- <tr><th>paid</th><td>[% model.paid %]</td></tr>
- <tr><th>short_description</th><td>[% model.short_description %]</td></tr>
+ <tr><th>Date</th><td>[% model.date %]</td></tr>
  <tr>
-  <th>person</th>
-  <td>[<a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">details</a>]</td>
+  <th>Person</th>
+  <td><a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">[% model.person.full_name %]</a></td>
  </tr>
+ <tr><th>Short Description</th><td>[% model.short_description | html_entity %]</td></tr>
+ <tr><th>Long Description</th><td>[% model.long_description | html_entity %]</td></tr>
+ <tr><th>Invoice Submitted</th><td>[% IF  model.invoice_submitted %]Yes[% ELSE %]No[% END %]</td></tr>
+ <tr><th>Manager Approved</th><td>[% IF model.manager_approved %]Yes[% ELSE %]No[% END %]</td></tr>
+ <tr><th>HR Approved</th><td>[% IF model.hr_approved %]Yes[% ELSE %]No[% END %]</td></tr>
+ <tr><th>Paid</th><td>[% IF model.paid %]Yes[% ELSE %]No[% END %]</td></tr>
 </table>
 
 

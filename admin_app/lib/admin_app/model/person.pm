@@ -2,7 +2,7 @@
 package admin_app::model::person;
 use strict;
 use warnings;
-use base qw(ClearPress::model);
+use base qw(admin_app::model);
 use admin_app::model::team_company;
 
 __PACKAGE__->mk_accessors(__PACKAGE__->fields());
@@ -116,6 +116,18 @@ sub subordinates {
     id_manager => $self->id_person()
   } )->subordinates() || [];
   return $return;
+}
+
+sub has_expense_claims {
+  my ( $self ) = @_;
+  return scalar @{ $self->expense_claims };
+}
+
+sub ordered_expense_claims {
+  my ( $self ) = @_;
+  my @ecs = @{ $self->expense_claims };
+
+  return [sort { $b->date cmp $a->date } @ecs];
 }
 
 1;

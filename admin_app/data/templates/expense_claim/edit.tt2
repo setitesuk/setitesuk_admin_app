@@ -1,30 +1,7 @@
-
-<h2>expense_claim </h2>
-<form method="post" action="[% model.id_expense_claim %]">
- <ul>
-  <li>
-   <label for="date">date</label>
-   <input type="text" id="date" name="date" value="[% model.date %]" />
-  </li>  <li>
-   <label for="hr_approved">hr_approved</label>
-   <input type="text" id="hr_approved" name="hr_approved" value="[% model.hr_approved %]" />
-  </li>  <li>
-   <label for="invoice_submitted">invoice_submitted</label>
-   <input type="text" id="invoice_submitted" name="invoice_submitted" value="[% model.invoice_submitted %]" />
-  </li>  <li>
-   <label for="long_description">long_description</label>
-   <input type="text" id="long_description" name="long_description" value="[% model.long_description %]" />
-  </li>  <li>
-   <label for="manager_approved">manager_approved</label>
-   <input type="text" id="manager_approved" name="manager_approved" value="[% model.manager_approved %]" />
-  </li>  <li>
-   <label for="paid">paid</label>
-   <input type="text" id="paid" name="paid" value="[% model.paid %]" />
-  </li>  <li>
-   <label for="short_description">short_description</label>
-   <input type="text" id="short_description" name="short_description" value="[% model.short_description %]" />
-  </li>
- </ul>
+[%- SET form_type = "edit" %]
+<h2>Edit Expense Claim</h2>
+<form method="post" action="[% SCRIPT_NAME %]/expense_claim/[% model.id_expense_claim %]" id="expense_claim_form">
+ [% PROCESS expense_claim/form_fields.tt2 %]
  <input type="submit" value="Update" />
 </form>
  

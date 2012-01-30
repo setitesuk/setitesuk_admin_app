@@ -24,7 +24,14 @@
 </table>
 [%- END %]
 
-[% PROCESS expense_claim/list.tt2 %]
+[%- IF model.has_expense_claims %]
+<table id="expense_claim_list">
+  [% PROCESS expense_claim/table_header.tt2 %]
+  <tbody>[% FOREACH expense_claim IN model.ordered_expense_claims %]
+    [% PROCESS expense_claim/table_row.tt2 %]
+  [% END %]</tbody>
+</table>
+[%- END %]
 
 [% PROCESS person_admingroup/list.tt2 %]
 

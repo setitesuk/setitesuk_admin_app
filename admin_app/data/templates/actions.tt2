@@ -1,7 +1,22 @@
 
 <h1>admin_app</h1>
 <ul id="actions">
- <li>[<a href="[% SCRIPT_NAME %]/holiday/">List holidays</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/email_rule/">List email_rules</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/person_team/">List person_teams</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/holiday_allowance/">List holiday_allowances</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/expense_claim/">List expense_claims</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/responsibility_for/">List responsibility_fors</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/admingroup/">List admingroups</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/person_admingroup/">List person_admingroups</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/person/">List people</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/person_allowance/">List person_allowances</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/company/">List companies</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/team_company/">List team_companies</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/team/">List teams</a>]</li>
- <li>[<a href="[% SCRIPT_NAME %]/holiday/;add">Add holiday</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/email_rule/;add">Add email_rule</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/person_team/;add">Add person_team</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/holiday_allowance/;add">Add holiday_allowance</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/expense_claim/;add">Add expense_claim</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/responsibility_for/;add">Add responsibility_for</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/admingroup/;add">Add admingroup</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/person_admingroup/;add">Add person_admingroup</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/person/;add">Add person</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/person_allowance/;add">Add person_allowance</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/company/;add">Add company</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/team_company/;add">Add team_company</a>]</li> <li>[<a href="[% SCRIPT_NAME %]/team/;add">Add team</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/company/">Companies</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/team/">Teams</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/person/">People</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/email_rule/">Email Rules</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/holiday_allowance/">Holiday Allowances</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/expense_claim/">Expense Claims</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/holiday_allowance/;add">Add Holiday Allowance</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/responsibility_for/;add">Add Responsibility For</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/company/;add">Add Company</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/team/;add">Add Team</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/holiday/;add">Add Holiday</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/person/;add">Add Person</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/expense_claim/;add">Add Expense Claim</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/admingroup/">List Admingroups</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/admingroup/;add">Add Admingroup</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/person_admingroup/;add">Add PersonAdmingroup</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/email_rule/;add">Add Email Rule</a>]</li>
 </ul>
  

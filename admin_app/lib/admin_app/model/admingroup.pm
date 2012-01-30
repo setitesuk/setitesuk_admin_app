@@ -2,7 +2,7 @@
 package admin_app::model::admingroup;
 use strict;
 use warnings;
-use base qw(ClearPress::model);
+use base qw(admin_app::model);
 
 __PACKAGE__->mk_accessors(__PACKAGE__->fields());
 __PACKAGE__->has_many( [ qw( person_admingroup ) ] );

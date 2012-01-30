@@ -1,14 +1,10 @@
 <table id="expense_claim_list">
- <caption>Expense Claims</caption>
- <thead><tr><th>date</th><th>hr_approved</th><th>invoice_submitted</th><th>long_description</th><th>manager_approved</th><th>paid</th><th>short_description</th></tr></thead>
- <tbody>
-[% FOREACH expense_claim = model.expense_claims %]
-<tr>
- <td>[% expense_claim.date %]</td><td>[% expense_claim.hr_approved %]</td><td>[% expense_claim.invoice_submitted %]</td><td>[% expense_claim.long_description %]</td><td>[% expense_claim.manager_approved %]</td><td>[% expense_claim.paid %]</td><td>[% expense_claim.short_description %]</td>
- <td>[<a href="[% SCRIPT_NAME %]/expense_claim/[% expense_claim.id_expense_claim %]">details</a>]</td>
-</tr>
-[% END %]
- </tbody>
+  [% PROCESS expense_claim/table_header.tt2 %]
+  <tbody>
+[%- FOREACH expense_claim = model.expense_claims %]
+  [% PROCESS expense_claim/table_row.tt2 %]
+[%- END %]
+  </tbody>
 </table>
 
  

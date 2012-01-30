@@ -2,7 +2,7 @@
 package admin_app::model::team;
 use strict;
 use warnings;
-use base qw(ClearPress::model);
+use base qw(admin_app::model);
 use Carp;
 use admin_app::model::company;
 use admin_app::model::team_company;

@@ -1,0 +1,46 @@
+<ul>
+[%- IF model.date %]
+  <li>
+    <label for="date">date</label>
+    <input type="text" id="date" name="date" value="[% model.date %]" />
+  </li>[% ELSE %]<input type="hidden" id="date" name="date" value="[% model.date_today %]" />[% END %]
+[%- IF model.id_person AND form_type == "add" %]
+  <input type="hidden" id="id_person" name="id_person" value="[% model.id_person %]">
+[%- ELSIF model.id_person AND form_type == "edit" %]
+  <li>Person [% model.person.username %]<input type="hidden" id="id_person" name="id_person" value="[% model.id_person %]"></li>
+[%- ELSE %]
+  <li>
+    <label for="person">Person</label><select id="id_person" name="id_person">[% FOREACH person IN model.all_people %]
+      <option value="[% person.id_person %]"[% IF model.id_person == person.id_person %] selected="1"[% END %]>[% person.username %]</option>[% END %]  
+    </select>
+  </li>
+[%- END %]
+  <li>
+    <label for="short_description">Short Description</label>
+    <input type="text" id="short_description" name="short_description" value="[% model.short_description %]" />
+  </li>
+  <li>
+    <label for="long_description">Long Description</label>
+    <textarea id="long_description" name="long_description" value="[% model.long_description %]">[% model.long_description %]</textarea>
+  </li>
+  <li>
+    <label for="invoice_submitted">Invoice Submitted</label>
+    <select id="invoice_submitted" name="invoice_submitted"><option value="0"[% IF model.invoice_submitted == 0 %] selected="1"[% END %]>No</option><option value="1"[% IF model.invoice_submitted == 1 %] selected="1"[% END %]>Yes</option></select>
+  </li>
+[%- IF form_type == 'edit' && model.invoice_submitted == 1 %]
+  <li>
+    <label for="manager_approved">Manager Approved</label>
+    <select id="manager_approved" name="manager_approved"><option value="0"[% IF model.manager_approved == 0 %] selected="1"[% END %]>No</option><option value="1"[% IF model.manager_approved == 1 %] selected="1"[% END %]>Yes</option></select>
+  </li>
+[%- IF model.manager_approved == 1 %]
+  <li>
+    <label for="hr_approved">HR Approved</label>
+    <select id="hr_approved" name="hr_approved"><option value="0"[% IF model.hr_approved == 0 %] selected="1"[% END %]>No</option><option value="1"[% IF model.hr_approved == 1 %] selected="1"[% END %]>Yes</option></select>
+  </li>
+  <li>
+    <label for="paid">Paid</label>
+    <select id="paid" name="paid"><option value="0"[% IF model.paid == 0 %] selected="1"[% END %]>No</option><option value="1"[% IF model.paid == 1 %] selected="1"[% END %]>Yes</option></select>
+  </li>
+[%- END %]
+[%- END %]
+</ul>

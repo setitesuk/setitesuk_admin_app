@@ -1,0 +1,13 @@
+<caption>Expense Claims</caption>
+<thead>
+  <tr>
+    <th>Date</th>
+    <th>Claimant</th>
+    <th>Short Description</th>
+    <th>Long Description</th>
+    <th>Invoice Submitted</th>
+    <th>Manager Approved</th>
+    <th>HR Approved</th>
+    <th>Paid</th>
+  </tr>
+</thead>
