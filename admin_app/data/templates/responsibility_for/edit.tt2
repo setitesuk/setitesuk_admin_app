@@ -1,15 +1,6 @@
-
-<h2>responsibility_for </h2>
+<h2>Edit Line Management Responsibility For </h2>
 <form method="post" action="[% model.id_responsibility_for %]">
- <ul>
-  <li>
-   <label for="id_manager">id_manager</label>
-   <input type="text" id="id_manager" name="id_manager" value="[% model.id_manager %]" />
-  </li>  <li>
-   <label for="push_to_further_manager">push_to_further_manager</label>
-   <input type="text" id="push_to_further_manager" name="push_to_further_manager" value="[% model.push_to_further_manager %]" />
-  </li>
- </ul>
- <input type="submit" value="Update" />
+  [% PROCESS responsibility_for/form_fields.tt2 %]
+  <input type="submit" value="Update" />
 </form>
  

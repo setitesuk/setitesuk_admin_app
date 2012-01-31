@@ -18,7 +18,7 @@
     [% PROCESS holiday/table_row.tt2 %]
   [% END %]</tbody>
 </table>
-<a href="[% SCRIPT_NAME %]/holiday/;add?id_person=[% model.id_person %]">Request Holiday</a>
+<p><a href="[% SCRIPT_NAME %]/holiday/;add?id_person=[% model.id_person %]">Request Holiday</a></p>
 
 
 
@@ -31,6 +31,7 @@
   [% END %]</tbody>
 </table>
 [%- END %]
+<p><a href="[% SCRIPT_NAME %]/responsibility_for/;add?id_manager=[% model.id_person %]">Add Line Management Responsibility</a></p>
 
 [%- IF model.has_expense_claims %]
 <table id="expense_claim_list">
@@ -41,7 +42,7 @@
 </table>
 [%- END %]
 
-<a href="[% SCRIPT_NAME %]/expense_claim/;add?id_person=[% model.id_person %]">Make expense claim</a>
+<p><a href="[% SCRIPT_NAME %]/expense_claim/;add?id_person=[% model.id_person %]">Make expense claim</a></p>
 
 [% PROCESS person_admingroup/list.tt2 %]
 

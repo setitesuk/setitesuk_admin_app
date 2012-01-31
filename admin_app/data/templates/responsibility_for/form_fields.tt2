@@ -1,0 +1,14 @@
+<ul>
+  <li>
+    <label for="person">Person</label>
+    <select id="id_person" name="id_person">[% FOREACH person IN model.all_people %]<option value="[% person.id_person %]"[% IF model.id_person == person.id_person %] selected="1"[% END %]>[% person.full_name %]</option>[% END %]</select>
+  </li>
+  <li>
+    <label for="line_manager">Line Manager</label>
+    <select id="id_manager" name="id_manager">[% FOREACH person IN model.all_people %]<option value="[% person.id_person %]"[% IF model.id_manager == person.id_person %] selected="1"[% END %]>[% person.full_name %]</option>[% END %]</select>
+  </li>
+  <li>
+    <label for="push_to_further_manager">Push requests to Line Manager of Line Manager</label>
+    <select id="push_to_further_manager" name="push_to_further_manager"><option value="0">No</option><option value="1"[% IF model.push_to_further_manager %] selected="1"[% END %]>Yes</option></select>
+  </li>
+</ul>

@@ -14,11 +14,6 @@ sub fields {
   return qw(id_expense_claim id_person date hr_approved invoice_submitted long_description manager_approved paid short_description );
 }
 
-sub all_people {
-  my ( $self ) = @_;
-  return admin_app::model::person->new->people;
-}
-
 sub create {
   my ( $self ) = @_;
   $self->_check_date_exists();
