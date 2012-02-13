@@ -136,7 +136,7 @@ sub ordered_expense_claims {
 
 sub person_allowance_for_year {
   my ( $self, $year ) = @_;
-carp qq{in person_allowance_for_year $year};
+
   my $allowance;
   foreach my $pa ( @{ $self->person_allowances } ) {
     if ( $pa->year == $year ) {
@@ -148,7 +148,7 @@ carp qq{in person_allowance_for_year $year};
   if ( $allowance ) {
     return $allowance;
   }
-carp qq{about to create for $year};
+
   return admin_app::model::person_allowance->new( {
     id_person => $self->id_person,
     person    => $self,

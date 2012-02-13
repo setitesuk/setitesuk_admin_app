@@ -9,30 +9,74 @@
 [% END %]
   <li>
     <label for="date_start">Start Date</label>
-    <input type="text" id="date_start" name="date_start" value="[% model.date_start %]" />
+    [% IF model.id_manager %][% model.date_start %][% ELSE %]<input type="text" id="date_start" name="date_start" value="[% model.date_start %]" /><div id="date_start_validate_error"></div>[% END %]
   </li>
   <li>
     <label for="date_end">End Date</label>
-    <input type="text" id="date_end" name="date_end" value="[% model.date_end %]" />
+    [% IF model.id_manager %][% model.date_end %][% ELSE %]<input type="text" id="date_end" name="date_end" value="[% model.date_end %]" /><div id="date_end_validate_error"></div><div id="date_error"></div>[% END %]
   </li>
   <li>
     <label for="am">am</label>
-    <select id="am" name="am"><option value="0">N</option><option value="1"[% IF model.am %] selected="1"[% END %]>Y</option></select>
+    [% IF model.id_manager %][% IF model.am %]Yes[% ELSE %]No[% END %][% ELSE %]<select id="am" name="am"><option value="0">N</option><option value="1"[% IF model.am %] selected="1"[% END %]>Y</option></select>[% END %]
   </li> 
   <li>
     <label for="pm">pm</label>
-    <select id="pm" name="pm"><option value="0">N</option><option value="1"[% IF model.pm %] selected="1"[% END %]>Y</option></select>
-  </li> 
+    [% IF model.id_manager %][% IF model.pm %]Yes[% ELSE %]No[% END %][% ELSE %]<select id="pm" name="pm"><option value="0">N</option><option value="1"[% IF model.pm %] selected="1"[% END %]>Y</option></select>[% END %]
+  </li>
+[%- IF model.date_start %]
   <li>
     <label for="approved">Approved</label>
-    <select id="approved" name="approved"><option value="0">N</option><option value="1"[% IF model.approved %] selected="1"[% END %]>Y</option></select>
-  </li> 
+    [%- IF ! model.id_manager %][% IF model.approved %]Yes[% ELSE %]No[% END %][% ELSE %]<select id="approved" name="approved"><option value="0">N</option><option value="1"[% IF model.approved %] selected="1"[% END %]>Y</option></select>[% END %]
+  </li>
+[%- END %]
+[%- IF model.approved %]
   <li>
     <label for="request_deletion">Request Cancellation</label>
-    <select id="request_deletion" name="request_deletion"><option value="0">N</option><option value="1"[% IF model.request_deletion %] selected="1"[% END %]>Y</option></select>
+    [% IF model.id_manager %][% IF model.request_deletion %]Yes[% ELSE %]No[% END %][% ELSE %]<select id="request_deletion" name="request_deletion"><option value="0">N</option><option value="1"[% IF model.request_deletion %] selected="1"[% END %]>Y</option></select>[% END %]
   </li>
+[%- END %]
+[%- IF model.id_manager && model.request_deletion %]
   <li>
     <label for="deletion_approved">Cancellation Approved</label>
     <select id="deletion_approved" name="deletion_approved"><option value="0">N</option><option value="1"[% IF model.deletion_approved %] selected="1"[% END %]>Y</option></select>
   </li>
+[%- END %]
 </ul>
+
+<script type="text/javascript">
+//<![CDATA[
+
+$('#date_start').blur( function() { set_date_end(); return false; } );
+$('#date_end').blur( function() { check_date_end(); validate_date('date_end'); return false; } );
+
+function set_date_end() {
+  date_start = $('#date_start').attr('value');
+  if ( validate_date( 'date_start' ) ) {
+    $('#date_end').attr('value', date_start);
+  }
+  return;
+}
+
+function validate_date( type ) {
+  if ( new Date( $('#'+type).attr('value') ) == 'Invalid Date' ) {
+    $( '#' + type + '_validate_error' ).html('<font color="red">Invalid date - YYYY-MM-DD</font>');
+    return;
+  }
+  $( '#' + type + '_validate_error' ).html('');
+  return 1;
+}
+
+function check_date_end() {
+  date_start = new Date( $('#date_start').attr('value') );
+  date_end   = new Date( $('#date_end'  ).attr('value') );
+  diff = new Date(date_end - date_start);
+  if ( diff < 0 ) {
+    $('#date_error').html('<font color="red">Date end is pre date start</font>');
+  } else {
+    $('#date_error').html('');
+  }
+  return;
+}
+
+//]]>
+</script>

@@ -17,5 +17,13 @@ sub all_people {
   return admin_app::model::person->new->people;
 }
 
+sub id_manager {
+  my ( $self, $id_manager ) = @_;
+  if ( $id_manager ) {
+    $self->{id_manager} = $id_manager;
+  }
+  return $self->{id_manager};
+}
+
 1;
  

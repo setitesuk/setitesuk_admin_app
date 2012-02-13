@@ -1,3 +1,4 @@
+<h2>Holidays[% IF model.id_person %] for <a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">[% model.person.full_name %]</a>[% END %]</h2>
 <table id="holiday_list">
   [% PROCESS holiday/table_header.tt2 %]
  <tbody>

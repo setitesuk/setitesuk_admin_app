@@ -1,4 +1,4 @@
-
+<script type="text/javascript" src="/js/core/jquery-1.4.4.min.js"></script>
 <h1>admin_app</h1>
 <ul id="actions">
   <li>[<a href="[% SCRIPT_NAME %]/company/">Companies</a>]</li>
