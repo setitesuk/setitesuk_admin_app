@@ -4,6 +4,8 @@ use strict;
 use warnings;
 use base qw(admin_app::model);
 use admin_app::model::team_company;
+use admin_app::model::person_allowance;
+use Carp;
 
 __PACKAGE__->mk_accessors(__PACKAGE__->fields());
 __PACKAGE__->has_many( [ qw( person_allowance person_team person_admingroup responsibility_for holiday expense_claim ) ] );
@@ -55,6 +57,8 @@ sub create {
   $self->SUPER::create();
 
   $self->_person_team_save();
+
+  admin_app::model::person_allowance->new( { id_person => $self->id_person, person => $self } );
 
   $util->transactions( $tx_state ) and $util->dbh->commit;
 
@@ -128,6 +132,42 @@ sub ordered_expense_claims {
   my @ecs = @{ $self->expense_claims };
 
   return [sort { $b->date cmp $a->date } @ecs];
+}
+
+sub person_allowance_for_year {
+  my ( $self, $year ) = @_;
+carp qq{in person_allowance_for_year $year};
+  my $allowance;
+  foreach my $pa ( @{ $self->person_allowances } ) {
+    if ( $pa->year == $year ) {
+      $allowance = $pa;
+      last;
+    }
+  }
+
+  if ( $allowance ) {
+    return $allowance;
+  }
+carp qq{about to create for $year};
+  return admin_app::model::person_allowance->new( {
+    id_person => $self->id_person,
+    person    => $self,
+    year      => $year,
+  } );
+}
+
+sub holidays_for_year {
+  my ( $self, $year ) = @_;
+
+  my @wanted_holidays;
+
+  foreach my $holiday ( @{ $self->holidays } ) {
+    if ( $holiday->dt_end->year == $year ) {
+      push @wanted_holidays, $holiday;
+    }
+  }
+
+  return @wanted_holidays;
 }
 
 1;
