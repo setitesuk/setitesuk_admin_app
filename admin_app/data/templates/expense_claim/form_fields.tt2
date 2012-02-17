@@ -1,46 +1,56 @@
 <ul>
-[%- IF model.date %]
+
   <li>
-    <label for="date">date</label>
-    <input type="text" id="date" name="date" value="[% model.date %]" />
-  </li>[% ELSE %]<input type="hidden" id="date" name="date" value="[% model.date_today %]" />[% END %]
-[%- IF model.id_person AND form_type == "add" %]
-  <input type="hidden" id="id_person" name="id_person" value="[% model.id_person %]">
-[%- ELSIF model.id_person AND form_type == "edit" %]
-  <li>Person [% model.person.username %]<input type="hidden" id="id_person" name="id_person" value="[% model.id_person %]"></li>
-[%- ELSE %]
-  <li>
-    <label for="person">Person</label><select id="id_person" name="id_person">[% FOREACH person IN model.all_people %]
-      <option value="[% person.id_person %]"[% IF model.id_person == person.id_person %] selected="1"[% END %]>[% person.username %]</option>[% END %]  
-    </select>
+    <label for="date">Date</label>
+    [% IF model.date %][% model.date %][% END %]<input type="[% IF model.date %]hidden[% ELSE %]text[% END %]" id="date" name="date" value="[% model.date %]" /><div id="date_validate_error"></div>
   </li>
-[%- END %]
+  <li>
+    <label for="id_person">Person</label>[%- IF model.id_person %][% model.person.full_name %]<input type="hidden" id="id_person" name="id_person" value="[% model.id_person %]" />[% ELSE %]<select id="id_person" name="id_person">[% FOREACH person IN model.all_people %]
+      <option value="[% person.id_person %]"[% IF model.id_person == person.id_person %] selected="selected"[% END %]>[% person.full_name %]</option>[% END %]  
+    </select>[% END %]
+  </li>
   <li>
     <label for="short_description">Short Description</label>
     <input type="text" id="short_description" name="short_description" value="[% model.short_description %]" />
   </li>
   <li>
     <label for="long_description">Long Description</label>
-    <textarea id="long_description" name="long_description" value="[% model.long_description %]">[% model.long_description %]</textarea>
+    <textarea id="long_description" name="long_description" rows="4" cols="50">[% model.long_description %]</textarea>
   </li>
   <li>
     <label for="invoice_submitted">Invoice Submitted</label>
-    <select id="invoice_submitted" name="invoice_submitted"><option value="0"[% IF model.invoice_submitted == 0 %] selected="1"[% END %]>No</option><option value="1"[% IF model.invoice_submitted == 1 %] selected="1"[% END %]>Yes</option></select>
+    <select id="invoice_submitted" name="invoice_submitted"><option value="0"[% IF model.invoice_submitted == 0 %] selected="selected"[% END %]>No</option><option value="1"[% IF model.invoice_submitted == 1 %] selected="selected"[% END %]>Yes</option></select>
   </li>
 [%- IF form_type == 'edit' && model.invoice_submitted == 1 %]
   <li>
     <label for="manager_approved">Manager Approved</label>
-    <select id="manager_approved" name="manager_approved"><option value="0"[% IF model.manager_approved == 0 %] selected="1"[% END %]>No</option><option value="1"[% IF model.manager_approved == 1 %] selected="1"[% END %]>Yes</option></select>
+    <select id="manager_approved" name="manager_approved"><option value="0"[% IF model.manager_approved == 0 %] selected="selected"[% END %]>No</option><option value="1"[% IF model.manager_approved == 1 %] selected="selected"[% END %]>Yes</option></select>
   </li>
 [%- IF model.manager_approved == 1 %]
   <li>
     <label for="hr_approved">HR Approved</label>
-    <select id="hr_approved" name="hr_approved"><option value="0"[% IF model.hr_approved == 0 %] selected="1"[% END %]>No</option><option value="1"[% IF model.hr_approved == 1 %] selected="1"[% END %]>Yes</option></select>
+    <select id="hr_approved" name="hr_approved"><option value="0"[% IF model.hr_approved == 0 %] selected="selected"[% END %]>No</option><option value="1"[% IF model.hr_approved == 1 %] selected="selected"[% END %]>Yes</option></select>
   </li>
   <li>
     <label for="paid">Paid</label>
-    <select id="paid" name="paid"><option value="0"[% IF model.paid == 0 %] selected="1"[% END %]>No</option><option value="1"[% IF model.paid == 1 %] selected="1"[% END %]>Yes</option></select>
+    <select id="paid" name="paid"><option value="0"[% IF model.paid == 0 %] selected="selected"[% END %]>No</option><option value="1"[% IF model.paid == 1 %] selected="selected"[% END %]>Yes</option></select>
   </li>
 [%- END %]
 [%- END %]
 </ul>
+
+<script type="text/javascript">
+//<![CDATA[
+
+$('#date').blur( function() { validate_date('date'); return false; } );
+function validate_date( type ) {
+  if ( new Date( $('#'+type).attr('value') ) == 'Invalid Date' ) {
+    $( '#' + type + '_validate_error' ).html('<span style="color:red;">Invalid date - YYYY-MM-DD<\/span>');
+    return;
+  }
+  $( '#' + type + '_validate_error' ).html('');
+  return 1;
+}
+
+//]]>
+</script>

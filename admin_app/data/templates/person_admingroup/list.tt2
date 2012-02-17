@@ -1,13 +1,10 @@
-
-<h2>person_admingroups </h2>
 <table id="person_admingroup_list">
- <caption>person_admingroup list</caption>
- <thead><tr></tr></thead>
- <tbody>
-[% FOREACH person_admingroup = model.person_admingroups %]
+ <caption>Person Admin Groups</caption>
+ <thead><tr>[% IF ! model.id_person %]<th>Person</th>[% END %]<th>Group Name</th></tr></thead>
+ <tbody>[% FOREACH person_admingroup = model.person_admingroups %]
 <tr>
- 
- <td>[<a href="[% SCRIPT_NAME %]/person_admingroup/[% person_admingroup.id_person_admingroup %]">details</a>]</td>
+ [% IF ! model.id_person %]<td>[% person_admingroup.person.full_name %]</td>[% END %]
+ <td>[% person_admingroup.admingroup.groupname %]</td>
 </tr>
 [% END %]
  </tbody>

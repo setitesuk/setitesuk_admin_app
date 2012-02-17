@@ -1,6 +1,6 @@
 <h2>Edit Holiday Request</h2>
 <form method="post" action="[% model.id_holiday %]">
   [% PROCESS holiday/form_fields.tt2 %]
-  <input type="submit" value="Update" />
+  <p><input type="submit" value="Update" /></p>
 </form>
  

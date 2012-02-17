@@ -1,12 +1,11 @@
-
-<h2>admingroup </h2>
+<h2>Edit Admin Group </h2>
 <form method="post" action="[% model.id_admingroup %]">
  <ul>
   <li>
-   <label for="groupname">groupname</label>
+   <label for="groupname">Groupname</label>
    <input type="text" id="groupname" name="groupname" value="[% model.groupname %]" />
   </li>
  </ul>
- <input type="submit" value="Update" />
+ <p><input type="submit" value="Update" /></p>
 </form>
  

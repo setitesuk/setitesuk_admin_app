@@ -1,6 +1,6 @@
 <h2>Edit Line Management Responsibility For </h2>
 <form method="post" action="[% model.id_responsibility_for %]">
   [% PROCESS responsibility_for/form_fields.tt2 %]
-  <input type="submit" value="Update" />
+  <p><input type="submit" value="Update" /></p>
 </form>
  

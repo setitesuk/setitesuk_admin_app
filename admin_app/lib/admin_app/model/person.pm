@@ -6,6 +6,7 @@ use base qw(admin_app::model);
 use admin_app::model::team_company;
 use admin_app::model::person_allowance;
 use Carp;
+use DateTime;
 
 __PACKAGE__->mk_accessors(__PACKAGE__->fields());
 __PACKAGE__->has_many( [ qw( person_allowance person_team person_admingroup responsibility_for holiday expense_claim ) ] );
@@ -109,22 +110,44 @@ sub manager {
   return $manager;
 }
 
+sub manager_to_approve {
+  my ( $self ) = @_;
+  my $manager = $self;
+  my $responsibility_for;
+  while ( ! $responsibility_for || $responsibility_for->push_to_further_manager ) {
+    $responsibility_for = @{ $manager->responsibility_fors }[0];
+    if ( ! $responsibility_for ) {
+      return $manager;
+    }
+    $manager = $responsibility_for->manager;
+  }
+  return $manager;
+}
+
 sub has_subordinates {
   my ( $self ) = @_;
-  return scalar @{ $self->subordinates };
+  $self->{has_subordinates} ||= scalar @{ $self->subordinates };
+  return $self->{has_subordinates};
 }
 
 sub subordinates {
   my ( $self ) = @_;
-  my $return = admin_app::model::responsibility_for->new( {
+  $self->{subordinates} ||= admin_app::model::responsibility_for->new( {
     id_manager => $self->id_person()
   } )->subordinates() || [];
-  return $return;
+  return $self->{subordinates};
+}
+
+sub has_admingroups {
+  my ( $self ) = @_;
+  $self->{has_admingroups} ||= scalar @{ $self->admingroups };
+  return $self->{has_admingroups};
 }
 
 sub has_expense_claims {
   my ( $self ) = @_;
-  return scalar @{ $self->expense_claims };
+  $self->{has_expense_claims} ||= scalar @{ $self->expense_claims };
+  return $self->{has_expense_claims};
 }
 
 sub ordered_expense_claims {
@@ -136,6 +159,8 @@ sub ordered_expense_claims {
 
 sub person_allowance_for_year {
   my ( $self, $year ) = @_;
+
+  $year ||= DateTime->now->year;
 
   my $allowance;
   foreach my $pa ( @{ $self->person_allowances } ) {
@@ -168,6 +193,81 @@ sub holidays_for_year {
   }
 
   return @wanted_holidays;
+}
+
+sub is_currently_push_management_responsibilities {
+  my ( $self ) = @_;
+  return 0 if ! $self->has_subordinates;
+  $self->{is_currently_push_management_responsibilities} ||= $self->_set_all_push_management_responsibilities;
+  return $self->{is_currently_push_management_responsibilities};
+}
+
+# ensure that all management_responsibilities are the same
+sub _set_all_push_management_responsibilities {
+  my ( $self, $invert ) = @_;
+
+  my $util = $self->util;
+
+  my $tx_state = $util->transactions();
+  $util->transactions(0);
+
+  my $new_management_responsibilities;
+  foreach my $so ( @{ $self->subordinates } ) {
+    my $responsibility_for = @{ $so->responsibility_fors }[0];
+    if ( ! defined $new_management_responsibilities ) {
+      if ( $invert ) {
+        $new_management_responsibilities = ! $responsibility_for->push_to_further_manager;
+      } else {
+        $new_management_responsibilities = $responsibility_for->push_to_further_manager;
+      }
+    }
+    $responsibility_for->push_to_further_manager( $new_management_responsibilities );
+    $responsibility_for->update;
+  }
+
+  $util->transactions( $tx_state ) and $util->dbh->commit;
+  return $new_management_responsibilities;
+  
+}
+
+sub invert_push_management_responsibilities {
+  my ( $self ) = @_;
+  $self->_set_all_push_management_responsibilities( q{invert} );
+  $self->{is_currently_push_management_responsibilities} = undef;
+  return 1;
+}
+
+sub has_holidays_to_approve {
+  my ( $self ) = @_;
+  return scalar @{ $self->holidays_to_approve };
+}
+
+sub holidays_to_approve {
+  my ( $self ) = @_;
+
+  if ( $self->{holidays_to_approve} ) {
+    return $self->{holidays_to_approve};
+  }
+
+  my @wanted_to_approve;
+  foreach my $so ( @{ $self->subordinates } ) {
+    foreach my $holiday ( @{ $so->holidays } ) {
+      if ( ! $holiday->approved || ( $holiday->request_deletion && ! $holiday->deletion_approved ) ) {
+        push @wanted_to_approve, $holiday;
+      }
+    }
+    if ( $so->is_currently_push_management_responsibilities ) {
+      push @wanted_to_approve, @{ $so->holidays_to_approve };
+    }
+  }
+
+  foreach my $holiday ( @wanted_to_approve ) {
+    $holiday->{manager_approve}++;
+  }
+
+  $self->{holidays_to_approve} = \@wanted_to_approve;
+
+  return $self->{holidays_to_approve};
 }
 
 1;

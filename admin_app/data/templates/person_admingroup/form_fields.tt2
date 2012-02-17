@@ -1,0 +1,10 @@
+<ul>
+ <li>
+  <label for="id_person">Person</label>
+  <select id="id_person" name="id_person">[% FOREACH person IN model.all_people %]<option value="[% person.id_person %]"[% IF model.id_person == person.id_person %] selected="selected"[% END %]>[% person.full_name %]</option>[% END %]</select>
+ </li>
+ <li>
+  <label for="id_admingroup">Admin Group</label>
+  <select id="id_admingroup" name="id_admingroup">[% FOREACH admin_group IN model.admingroups %]<option value="[% admin_group.id_admingroup %]"[% IF model.id_admingroup == admin_group.id_admingroup %] selected="selected"[% END %]>[% admin_group.groupname %]</option>[% END %]</select>
+ </li>
+</ul>

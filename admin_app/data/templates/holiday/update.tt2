@@ -1,7 +1,8 @@
-
-<h2>holiday </h2>
-holiday updated ok. Click <a href="[% SCRIPT_NAME %]/holiday/[% model.id_holiday %]">here</a> to continue.
+<h2>Holiday for [% model.person.full_name %]</h2>
+<p>
+Holiday updated ok. Click <a href="[% SCRIPT_NAME %]/person/[% model.id_person %]">here</a> to continue.
+</p>
 <script type="text/javascript">
- document.location.href="[% SCRIPT_NAME %]/holiday/[% model.id_holiday %]";
+ document.location.href="[% SCRIPT_NAME %]/person/[% model.id_person %]";
 </script>
  

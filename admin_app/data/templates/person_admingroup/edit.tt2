@@ -1,9 +1,6 @@
-
-<h2>person_admingroup </h2>
+<h2>Edit Person Admingroup </h2>
 <form method="post" action="[% model.id_person_admingroup %]">
- <ul>
-
- </ul>
- <input type="submit" value="Update" />
+  [% PROCESS person_admingroup/form_fields.tt2 %]
+  <p><input type="submit" value="Update" /></p>
 </form>
  

@@ -1,2 +1,2 @@
-<caption>Holidays Full</caption>
-<thead><tr><th>Start</th><th>End</th><th>am</th><th>pm</th><th>Approved</th><th>Cancellation Request</th><th>Cancellation Approved</th>[% IF ! model.id_person %]<th>Person</th>[% END %]</tr></thead>
+<caption>[% IF caption %][% caption %][% ELSE %]Holidays Full[% END %]</caption>
+<thead><tr><th>Start</th><th>End</th><th>am</th><th>pm</th><th>Approved</th><th>Cancellation Request</th><th>Cancellation Approved</th>[% IF ! model.id_person || manager_approval %]<th>Person</th>[% END %]</tr></thead>

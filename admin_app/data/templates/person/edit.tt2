@@ -1,6 +1,6 @@
 <h2>[% model.forename %] [% model.initials %] [% model.surname %]</h2>
 <form method="post" action="[% SCRIPT_NAME %]/person/[% model.id_person %]">
 [% PROCESS person/form_fields.tt2 %]
- <input type="submit" value="Update" />
+ <p><input type="submit" value="Update" /></p>
 </form>
  

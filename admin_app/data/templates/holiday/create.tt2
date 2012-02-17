@@ -1,7 +1,1 @@
-
-<h2>holiday </h2>
-holiday saved ok. Click <a href="[% SCRIPT_NAME %]/holiday/[% model.id_holiday %]">here</a> to continue.
-<script type="text/javascript">
- document.location.href="[% SCRIPT_NAME %]/holiday/[% model.id_holiday %]";
-</script>
- 
+[% PROCESS holiday/update.tt2 %]

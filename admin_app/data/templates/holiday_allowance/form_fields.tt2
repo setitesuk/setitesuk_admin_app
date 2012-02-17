@@ -1,7 +1,7 @@
 <ul>
   <li>
-    <label for="company">Company</label>
-    <select id="id_company" name="id_company">[% FOREACH company IN model.companies %]<option value="[% company.id_company %]" [% IF company.id_company == model.id_company %]selected="1"[% END %]>[% company.name %]</option>[% END %]</select>
+    <label for="id_company">Company</label>
+    <select id="id_company" name="id_company">[% FOREACH company IN model.companies %]<option value="[% company.id_company %]" [% IF company.id_company == model.id_company %]selected="selected"[% END %]>[% company.name %]</option>[% END %]</select>
   </li>
   <li>
     <label for="year">Year</label>

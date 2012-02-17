@@ -6,10 +6,10 @@
       <input type="text" id="teamname" name="teamname" value="[% model.teamname %]" />
     </li>
     <li>
-      <label for="company">Company</label>
+      <label for="id_company">Company</label>
       <select id="id_company" name="id_company">[% FOREACH comp IN model.all_companies %]<option value="[% comp.id_company %]">[% comp.name %]</option>[% END %]</select>
     </li>
   </ul>
-  <input type="submit" value="Add" />
+  <p><input type="submit" value="Add" /></p>
 </form>
  

@@ -6,8 +6,8 @@
   <td>[% IF holiday.approved %]Yes[% ELSE %]No[% END %]</td>
   <td>[% IF holiday.request_deletion %]Yes[% ELSE %]No[% END %]</td>
   <td>[% IF holiday.deletion_approved %]Yes[% ELSE %]No[% END %]</td>
-[%- IF ! model.id_person %]<td><a href="[% SCRIPT_NAME %]/person/[% holiday.id_person %]">[% holiday.person.full_name %]</a></td>[% END %]
+[%- IF holiday.id_person != model.id_person %]<td><a href="[% SCRIPT_NAME %]/person/[% holiday.id_person %]">[% holiday.person.full_name %]</a></td>[% END %]
 [%- IF model.id_person %]
-  <td>[<a href="[% SCRIPT_NAME %]/holiday/[% holiday.id_holiday %];edit?id_person=[% model.id_person %]">edit</a>]</td>
+  <td>[<a href="[% SCRIPT_NAME %]/holiday/[% holiday.id_holiday %];edit?id_person=[% holiday.id_person %][% IF holiday.manager_approve %]&amp;id_manager=[% model.id_person %][% END %]">edit</a>]</td>
 [%- END %]
 </tr>

@@ -49,13 +49,19 @@ sub create {
     $self->{dt_start} = undef;
   }
 
+  # if the person has no manager, then they should approve themselves
+  if ( $self->person->manager->id_person == $self->id_person ) {
+    $self->{approved} = 1;
+  }
+
   $self->SUPER::create;
-warn $self->date_start . q{ } . $self->date_end . qq{ $start_year $end_year};
+
   # ensure that there is a person_allowance set up for year
   $self->person->person_allowance_for_year( $end_year );
 
+
   $self->_calculate_remaining( $end_year );
-  
+
   $util->transactions($tx_state) and $dbh->commit;
 
   return 1;
@@ -66,6 +72,23 @@ sub update {
 
   my $util = $self->util;
   my $dbh = $util->dbh;
+  my $id_manager = $util->cgi->param( q{id_manager} );
+
+  if ( $id_manager ) {
+    my $person = $self->person;
+    my $manager = $self->person->manager_to_approve;
+    if ( $id_manager != $manager->id_person ) {
+      croak q{this manager is unable to approve};
+    }
+  }
+
+  # if the person has no manager, then they should approve themselves
+  if ( $self->person->manager->id_person == $self->id_person ) {
+    if ( $self->{request_deletion} ) {
+      $self->{deletion_approved} = 1;
+    }
+    $self->{approved} = 1;
+  }
 
   my $tx_state = $util->transactions;
   $util->transactions(0);

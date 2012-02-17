@@ -1,6 +1,6 @@
 <h2>Edit Email Rule</h2>
 <form method="post" action="[% model.id_email_rule %]">
 [% PROCESS email_rule/form_fields.tt2 %]
-  <input type="submit" value="Update" />
+  <p><input type="submit" value="Update" /></p>
 </form>
  

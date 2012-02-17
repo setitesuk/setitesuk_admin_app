@@ -1,6 +1,6 @@
 <h2>Request Holiday</h2>
 <form method="post" action="[% SCRIPT_NAME %]/holiday/">
   [% PROCESS holiday/form_fields.tt2 %]
-  <input type="submit" value="Add" />
+  <p><input type="submit" value="Add" /></p>
 </form>
  

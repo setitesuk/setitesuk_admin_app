@@ -1,6 +1,17 @@
 Holiday:
 
-restrict approval to line management responsibility
-line management to see what needs approval
 account for bank holidays
 allow way for a company to hve a sat/sun (or both) as a working day
+
+Line Management approval expense claim
+
+Login and requestor/admingroup functionality
+
+application_administration functions (all functions)
+hr functions ( add new staff, move staff around )
+account_functions (approve/paid expense claims)
+
+remove unnecessary templates
+Tests
+
+Selenium tests

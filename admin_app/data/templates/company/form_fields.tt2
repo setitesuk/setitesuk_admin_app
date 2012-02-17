@@ -8,7 +8,7 @@
     <input type="text" id="email_domain" name="email_domain" value="[% model.email_domain %]" />
   </li>
   <li>
-    <label for="email_rule">Email Rule (how should emails be created from user details)</label>
-    <select id="id_email_rule" name="id_email_rule">[% FOREACH er IN model.email_rules %]<option value="[% er.id_email_rule %]" [% IF er.id_email_rule == model.id_email_rule %]selected="1"[% END %]>[% er.rule %]</option>[% END %]</select>
+    <label for="id_email_rule">Email Rule (how should emails be created from user details)</label>
+    <select id="id_email_rule" name="id_email_rule">[% FOREACH er IN model.email_rules %]<option value="[% er.id_email_rule %]" [% IF er.id_email_rule == model.id_email_rule %]selected="selected"[% END %]>[% er.rule %]</option>[% END %]</select>
   </li>
 </ul>

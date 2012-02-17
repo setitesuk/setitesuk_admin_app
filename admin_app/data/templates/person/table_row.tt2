@@ -1,1 +1,8 @@
-<tr><td><a href="[% SCRIPT_NAME %]/person/[% person.id_person %]">[% person.username %]</td><td>[% person.forename %]</td><td>[% person.initials %]</td><td>[% person.surname %]</td><td>[% person.team.teamname %]</td><td>[<a href="[% SCRIPT_NAME %]/person/[% person.id_person %]">details</a>]</td></tr>
+<tr>
+  <td><a href="[% SCRIPT_NAME %]/person/[% person.id_person %]">[% person.username %]</a></td>
+  <td>[% person.forename %]</td>
+  <td>[% person.initials %]</td>
+  <td>[% person.surname %]</td>
+  <td>[% person.team.teamname %]</td>
+  <td>[<a href="[% SCRIPT_NAME %]/person/[% person.id_person %]">details</a>]</td>
+</tr>
