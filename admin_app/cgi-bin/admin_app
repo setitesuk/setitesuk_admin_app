@@ -3,37 +3,11 @@
 use warnings;
 use strict;
 use lib qw(lib);
-use ClearPress::controller;
-
+use admin_app::controller;
+use admin_app::decor;
 use admin_app::util;
 use admin_app::view::error;
 
-use admin_app::view::holiday;
-use admin_app::model::holiday;
-use admin_app::view::email_rule;
-use admin_app::model::email_rule;
-use admin_app::view::person_team;
-use admin_app::model::person_team;
-use admin_app::view::holiday_allowance;
-use admin_app::model::holiday_allowance;
-use admin_app::view::expense_claim;
-use admin_app::model::expense_claim;
-use admin_app::view::responsibility_for;
-use admin_app::model::responsibility_for;
-use admin_app::view::admingroup;
-use admin_app::model::admingroup;
-use admin_app::view::person_admingroup;
-use admin_app::model::person_admingroup;
-use admin_app::view::person;
-use admin_app::model::person;
-use admin_app::view::person_allowance;
-use admin_app::model::person_allowance;
-use admin_app::view::company;
-use admin_app::model::company;
-use admin_app::view::team_company;
-use admin_app::model::team_company;
-use admin_app::view::team;
-use admin_app::model::team;
 
 our $VERSION = do { my ($r) = q$LastChangedRevision: 413 $ =~ /(\d+)/smx; $r; };
 
@@ -42,6 +16,6 @@ main();
 
 sub main {
   my $util = admin_app::util->new();
-  ClearPress::controller->handler($util);
+  admin_app::controller->handler($util);
 }
  

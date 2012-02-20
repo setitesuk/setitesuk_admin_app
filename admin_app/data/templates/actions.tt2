@@ -1,4 +1,3 @@
-<script type="text/javascript" src="/js/core/jquery-1.4.4.min.js"></script>
 <h1>admin_app</h1>
 <ul id="actions">
   <li>[<a href="[% SCRIPT_NAME %]/company/">Companies</a>]</li>
@@ -7,16 +6,21 @@
   <li>[<a href="[% SCRIPT_NAME %]/email_rule/">Email Rules</a>]</li>
   <li>[<a href="[% SCRIPT_NAME %]/holiday_allowance/">Holiday Allowances</a>]</li>
   <li>[<a href="[% SCRIPT_NAME %]/expense_claim/">Expense Claims</a>]</li>
+[%- IF requestor.id_person %]
+  <li>[<a href="[% SCRIPT_NAME %]/holiday/;add?id_person=[% requestor.id_person %]">Add Holiday</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/expense_claim/;add?id_person=[% requestor.id_person %]">Add Expense Claim</a>]</li>
+[%- END %]
+[%- IF requestor.is_member_of_admingroup( 'HR' ) %]
   <li>[<a href="[% SCRIPT_NAME %]/holiday_allowance/;add">Add Holiday Allowance</a>]</li>
-  <li>[<a href="[% SCRIPT_NAME %]/responsibility_for/;add">Add Responsibility For</a>]</li>
-  <li>[<a href="[% SCRIPT_NAME %]/company/;add">Add Company</a>]</li>
   <li>[<a href="[% SCRIPT_NAME %]/team/;add">Add Team</a>]</li>
-  <li>[<a href="[% SCRIPT_NAME %]/holiday/;add">Add Holiday</a>]</li>
   <li>[<a href="[% SCRIPT_NAME %]/person/;add">Add Person</a>]</li>
-  <li>[<a href="[% SCRIPT_NAME %]/expense_claim/;add">Add Expense Claim</a>]</li>
+  <li>[<a href="[% SCRIPT_NAME %]/email_rule/;add">Add Email Rule</a>]</li>
+[%- END %]
+[%- IF requestor.is_member_of_admingroup( 'application_administration' ) %]
+<li>[<a href="[% SCRIPT_NAME %]/company/;add">Add Company</a>]</li>
   <li>[<a href="[% SCRIPT_NAME %]/admingroup/">List Admingroups</a>]</li>
   <li>[<a href="[% SCRIPT_NAME %]/admingroup/;add">Add Admingroup</a>]</li>
   <li>[<a href="[% SCRIPT_NAME %]/person_admingroup/;add">Add PersonAdmingroup</a>]</li>
-  <li>[<a href="[% SCRIPT_NAME %]/email_rule/;add">Add Email Rule</a>]</li>
+[%- END %]
 </ul>
  

@@ -7,6 +7,7 @@ use admin_app::model::team_company;
 use admin_app::model::person_allowance;
 use Carp;
 use DateTime;
+use List::MoreUtils qw{any};
 
 __PACKAGE__->mk_accessors(__PACKAGE__->fields());
 __PACKAGE__->has_many( [ qw( person_allowance person_team person_admingroup responsibility_for holiday expense_claim ) ] );
@@ -15,6 +16,22 @@ __PACKAGE__->has_all();
 
 sub fields {
   return qw( id_person forename initials surname username );
+}
+
+sub init {
+  my ( $self ) = @_;
+  if ( $self->id_person ) {
+    return $self;
+  }
+
+  if ( ! $self->username ) {
+    return $self;
+  }
+
+  my $query = q{select id_person from person where username = ?};
+  $self->{id_person} = $self->util->dbh->selectall_arrayref( $query, {}, $self->{username} )->[0]->[0];
+
+  return $self;
 }
 
 sub full_name {
@@ -268,6 +285,20 @@ sub holidays_to_approve {
   $self->{holidays_to_approve} = \@wanted_to_approve;
 
   return $self->{holidays_to_approve};
+}
+
+sub is_member_of_admingroup {
+  my ( $self, @admingroups ) = @_;
+
+  unshift @admingroups, q{application_administration};
+
+  foreach my $admingroup ( @admingroups ) {
+    if ( any { $_->groupname eq $admingroup } @{ $self->admingroups } ) {
+      return 1;
+    }
+  }
+
+  return;
 }
 
 1;

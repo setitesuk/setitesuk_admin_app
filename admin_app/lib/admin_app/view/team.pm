@@ -2,7 +2,7 @@
 package admin_app::view::team;
 use strict;
 use warnings;
-use base qw(ClearPress::view);
+use base qw(admin_app::view);
 
 1;
  
